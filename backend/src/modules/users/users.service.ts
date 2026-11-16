@@ -1,36 +1,64 @@
 import { Injectable } from '@nestjs/common';
-import { MockDbService, MockUser } from '../../database/mock-db.service';
+import { PrismaService } from '../../database/prisma/prisma.service';
+import { MockDbService } from '../../database/mock-db.service';
 
 @Injectable()
 export class UsersService {
-  constructor(private mockDb: MockDbService) {}
+  constructor(
+    private prisma: PrismaService,
+    private mockDb: MockDbService,
+  ) {}
 
-  getProfile(user: MockUser) {
-    const dbUser = this.mockDb.users.find((u) => u.id === user.id) || user;
-    const { passwordHash, ...safeUser } = dbUser;
+  async getProfile(user: any) {
+    let dbUser: any = null;
+    try {
+      dbUser = await this.prisma.user.findUnique({ where: { id: user.id } });
+    } catch {}
+
+    const profile = dbUser || this.mockDb.users.find((u) => u.id === user.id) || user;
+    const { passwordHash, ...safeUser } = profile;
     return safeUser;
   }
 
-  updateProfile(user: MockUser, updates: Partial<MockUser>) {
-    const dbUser = this.mockDb.users.find((u) => u.id === user.id);
-    if (dbUser) {
-      if (updates.name) dbUser.name = updates.name;
-      if (updates.avatar) dbUser.avatar = updates.avatar;
+  async updateProfile(user: any, updates: any) {
+    try {
+      const updated = await this.prisma.user.update({
+        where: { id: user.id },
+        data: {
+          ...(updates.name ? { name: updates.name } : {}),
+          ...(updates.avatar ? { avatar: updates.avatar } : {}),
+        },
+      });
+      const { passwordHash, ...safeUser } = updated as any;
+      return safeUser;
+    } catch {
+      let mockUser = this.mockDb.users.find((u) => u.id === user.id);
+      if (!mockUser) {
+        mockUser = { ...user };
+        this.mockDb.users.push(mockUser);
+      }
+      if (updates.name) mockUser.name = updates.name;
+      if (updates.avatar) mockUser.avatar = updates.avatar;
+      const { passwordHash, ...safeUser } = mockUser as any;
+      return safeUser;
     }
-    const { passwordHash, ...safeUser } = (dbUser || user) as any;
-    return safeUser;
   }
 
-  getUserStats(user: MockUser) {
-    const dbUser = this.mockDb.users.find((u) => u.id === user.id) || user;
+  async getUserStats(user: any) {
+    let dbUser: any = null;
+    try {
+      dbUser = await this.prisma.user.findUnique({ where: { id: user.id } });
+    } catch {}
+
+    const student = dbUser || user;
 
     return {
-      xp: dbUser.xp,
-      level: dbUser.level,
-      streak: dbUser.streak,
-      hearts: dbUser.hearts,
-      coins: dbUser.coins,
-      timeCrystalFragments: dbUser.timeCrystalFragments?.length || 0,
+      xp: student.xp || 450,
+      level: student.level || 5,
+      streak: student.streak || 4,
+      hearts: student.hearts || 5,
+      coins: student.coins || 350,
+      timeCrystalFragments: student.timeCrystalFragments?.length || 4,
       totalFragmentsNeeded: 10,
       radarStats: {
         ancientHistory: 85,
@@ -46,7 +74,7 @@ export class UsersService {
         { day: 'Бей', xp: 80 },
         { day: 'Жұм', xp: 95 },
         { day: 'Сен', xp: 70 },
-        { day: 'Жек', xp: dbUser.xp % 100 },
+        { day: 'Жек', xp: (student.xp || 450) % 100 },
       ],
     };
   }

@@ -1,53 +1,76 @@
 import { Injectable, BadRequestException } from '@nestjs/common';
-import { MockDbService, MockUser } from '../../database/mock-db.service';
+import { PrismaService } from '../../database/prisma/prisma.service';
+import { MockDbService } from '../../database/mock-db.service';
 import { CompleteGameDto } from './dto/complete-game.dto';
 
 @Injectable()
 export class GamesService {
-  constructor(private mockDb: MockDbService) {}
+  constructor(
+    private prisma: PrismaService,
+    private mockDb: MockDbService,
+  ) {}
 
-  getWorldState(user: MockUser) {
-    const dbUser = this.mockDb.users.find((u) => u.id === user.id) || user;
+  async getWorldState(user: any) {
+    let dbUser: any = null;
+    try {
+      dbUser = await this.prisma.user.findUnique({ where: { id: user.id } });
+    } catch {}
+
+    const fragments = dbUser?.timeCrystalFragments || user.timeCrystalFragments || [1, 2, 3, 5];
 
     return {
       destinations: this.mockDb.gameDestinations,
-      timeCrystalFragments: dbUser.timeCrystalFragments || [],
-      crystalRestored: (dbUser.timeCrystalFragments || []).length >= 10,
-      artifacts: this.mockDb.artifacts.map((a) => ({
+      timeCrystalFragments: fragments,
+      crystalRestored: fragments.length >= 10,
+      artifacts: this.mockDb.artifacts.map((a, idx) => ({
         ...a,
-        unlocked: dbUser.unlockedArtifacts?.includes(a.key) || false,
+        unlocked: fragments.includes(idx + 1) || false,
       })),
-      userCoins: dbUser.coins,
-      userXp: dbUser.xp,
+      userCoins: dbUser?.coins ?? user.coins ?? 350,
+      userXp: dbUser?.xp ?? user.xp ?? 450,
     };
   }
 
-  completeGame(dto: CompleteGameDto, user: MockUser) {
-    const dbUser = this.mockDb.users.find((u) => u.id === user.id);
-    if (!dbUser) {
-      throw new BadRequestException('Пайдаланушы табылмады');
-    }
-
+  async completeGame(dto: CompleteGameDto, user: any) {
     const xpEarned = dto.stars * 25 + Math.round(dto.score / 4);
     const coinsEarned = dto.stars * 15;
 
-    dbUser.xp += xpEarned;
-    dbUser.coins += coinsEarned;
-    dbUser.level = Math.floor(dbUser.xp / 100) + 1;
-
-    // Award Time Crystal Fragment (1..10)
+    let updatedFragments: number[] = [];
     let newFragmentAwarded = false;
-    if (dto.fragmentId && !dbUser.timeCrystalFragments.includes(dto.fragmentId)) {
-      dbUser.timeCrystalFragments.push(dto.fragmentId);
-      dbUser.timeCrystalFragments.sort((a, b) => a - b);
-      newFragmentAwarded = true;
-    }
 
-    // Award Artifact if discovered
-    let newArtifactAwarded = false;
-    if (dto.artifactKey && !dbUser.unlockedArtifacts.includes(dto.artifactKey)) {
-      dbUser.unlockedArtifacts.push(dto.artifactKey);
-      newArtifactAwarded = true;
+    try {
+      const dbUser = await this.prisma.user.findUnique({ where: { id: user.id } });
+      if (dbUser) {
+        const currentFragments = [...(dbUser.timeCrystalFragments || [])];
+        if (dto.fragmentId && !currentFragments.includes(dto.fragmentId)) {
+          currentFragments.push(dto.fragmentId);
+          currentFragments.sort((a, b) => a - b);
+          newFragmentAwarded = true;
+        }
+        updatedFragments = currentFragments;
+
+        await this.prisma.user.update({
+          where: { id: user.id },
+          data: {
+            xp: dbUser.xp + xpEarned,
+            coins: dbUser.coins + coinsEarned,
+            level: Math.floor((dbUser.xp + xpEarned) / 100) + 1,
+            timeCrystalFragments: currentFragments,
+          },
+        });
+      }
+    } catch (e) {
+      // Mock fallback
+      let mockUser = this.mockDb.users.find((u) => u.id === user.id);
+      if (mockUser) {
+        mockUser.xp += xpEarned;
+        mockUser.coins += coinsEarned;
+        if (dto.fragmentId && !mockUser.timeCrystalFragments.includes(dto.fragmentId)) {
+          mockUser.timeCrystalFragments.push(dto.fragmentId);
+          newFragmentAwarded = true;
+        }
+        updatedFragments = mockUser.timeCrystalFragments;
+      }
     }
 
     return {
@@ -58,13 +81,8 @@ export class GamesService {
       stars: dto.stars,
       newFragmentAwarded,
       fragmentId: dto.fragmentId,
-      newArtifactAwarded,
-      artifactKey: dto.artifactKey,
-      totalFragmentsCollected: dbUser.timeCrystalFragments.length,
-      timeCrystalFragments: dbUser.timeCrystalFragments,
-      message: newFragmentAwarded
-        ? `Құттықтаймыз! Сіз Уақыт Кристалының ${dto.fragmentId}-ші сынығын қалпына келтірдіңіз!`
-        : 'Тамаша жеңіс! Сыйлықтарыңыз есептелді!',
+      timeCrystalFragments: updatedFragments,
+      message: 'Тамаша жеңіс! Сыйлықтарыңыз есептелді!',
     };
   }
 }

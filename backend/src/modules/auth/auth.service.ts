@@ -72,6 +72,9 @@ export class AuthService {
         tokens,
       };
     } catch (dbError) {
+      if (dbError instanceof UnauthorizedException || dbError instanceof BadRequestException) {
+        throw dbError;
+      }
       this.logger.error('Database query error in sduLogin, falling back to mock:', dbError.message);
       // Fallback to mock in-memory DB if network drops
       let mockUser = this.mockDb.users.find((u) => u.studentId === trimmedId);

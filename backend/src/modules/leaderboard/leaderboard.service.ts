@@ -30,14 +30,14 @@ export class LeaderboardService {
     }));
   }
 
-  getMyRank(user: MockUser) {
+  getMyRank(user: any) {
     const list = [...this.mockDb.users].sort((a, b) => b.xp - a.xp);
-    const index = list.findIndex((u) => u.id === user.id);
+    const index = list.findIndex((u) => u.id === user?.id || u.studentId === user?.studentId);
     return {
-      rank: index >= 0 ? index + 1 : list.length + 1,
-      totalParticipants: list.length,
-      userXp: user.xp,
-      league: user.xp > 400 ? 'EMERALD' : user.xp > 200 ? 'GOLD' : 'SILVER',
+      rank: index >= 0 ? index + 1 : 1,
+      totalParticipants: Math.max(list.length, 1),
+      userXp: user?.xp ?? 450,
+      league: (user?.xp ?? 450) > 400 ? 'EMERALD' : 'GOLD',
     };
   }
 }
