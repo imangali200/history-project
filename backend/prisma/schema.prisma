@@ -1,0 +1,276 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider  = "postgresql"
+  url       = env("DATABASE_URL")
+  directUrl = env("DIRECT_URL")
+}
+
+enum Role {
+  STUDENT
+  TEACHER
+  ADMIN
+}
+
+enum QuestionType {
+  MULTIPLE_CHOICE
+  MATCH_PAIRS
+  TIMELINE
+  MAP_CLICK
+  TRUE_FALSE
+  FILL_BLANK
+}
+
+enum League {
+  BRONZE
+  SILVER
+  GOLD
+  EMERALD
+  DIAMOND
+}
+
+enum ArtifactRarity {
+  COMMON
+  RARE
+  EPIC
+  LEGENDARY
+}
+
+model User {
+  id                  String        @id @default(uuid())
+  studentId           String?       @unique
+  email               String?       @unique
+  passwordHash        String
+  name                String
+  nameEn              String?
+  avatar              String?       @default("batyr")
+  role                Role          @default(STUDENT)
+  faculty             String?
+  facultyEn           String?
+  specialty           String?
+  course              Int?          @default(1)
+  
+  // Gamification Metrics
+  xp                  Int           @default(0)
+  level               Int           @default(1)
+  coins               Int           @default(100)
+  hearts              Int           @default(5)
+  lastHeartRefill     DateTime      @default(now())
+  streak              Int           @default(0)
+  lastActiveDate      DateTime?
+  streakFreezeCount   Int           @default(0)
+  
+  // History World Time Crystal (1-10 fragments)
+  timeCrystalFragments Int[]        @default([])
+
+  // Relations
+  lessonProgress      UserLessonProgress[]
+  gameSessions        GameSession[]
+  userArtifacts       UserArtifact[]
+  dailyQuests         UserDailyQuest[]
+  achievements        UserAchievement[]
+  chatMessages        AiChatMessage[]
+  certificates        Certificate[]
+
+  createdAt           DateTime      @default(now())
+  updatedAt           DateTime      @updatedAt
+
+  @@index([xp])
+  @@index([faculty])
+}
+
+model Era {
+  id          String    @id @default(uuid())
+  slug        String    @unique
+  titleKz     String
+  titleRu     String?
+  titleEn     String?
+  description String?
+  order       Int       @default(0)
+  icon        String?
+  bannerUrl   String?
+  units       Unit[]
+  createdAt   DateTime  @default(now())
+}
+
+model Unit {
+  id          String    @id @default(uuid())
+  eraId       String
+  era         Era       @relation(fields: [eraId], references: [id], onDelete: Cascade)
+  slug        String    @unique
+  titleKz     String
+  titleRu     String?
+  titleEn     String?
+  description String?
+  order       Int       @default(0)
+  lessons     Lesson[]
+  createdAt   DateTime  @default(now())
+}
+
+model Lesson {
+  id          String                @id @default(uuid())
+  unitId      String
+  unit        Unit                  @relation(fields: [unitId], references: [id], onDelete: Cascade)
+  slug        String                @unique
+  titleKz     String
+  titleRu     String?
+  titleEn     String?
+  description String?
+  xpReward    Int                   @default(20)
+  order       Int                   @default(0)
+  isMilestone Boolean               @default(false)
+  questions   Question[]
+  userProgress UserLessonProgress[]
+  createdAt   DateTime              @default(now())
+}
+
+model Question {
+  id             String       @id @default(uuid())
+  lessonId       String
+  lesson         Lesson       @relation(fields: [lessonId], references: [id], onDelete: Cascade)
+  type           QuestionType @default(MULTIPLE_CHOICE)
+  promptKz       String
+  promptRu       String?
+  promptEn       String?
+  options        Json         // List of possible answers
+  correctAnswer  Json         // Key or index of correct answer
+  explanationKz  String?
+  explanationEn  String?
+  audioUrl       String?
+  imageUrl       String?
+  order          Int          @default(0)
+  createdAt      DateTime     @default(now())
+}
+
+model UserLessonProgress {
+  id          String    @id @default(uuid())
+  userId      String
+  user        User      @relation(fields: [userId], references: [id], onDelete: Cascade)
+  lessonId    String
+  lesson      Lesson    @relation(fields: [lessonId], references: [id], onDelete: Cascade)
+  status      String    @default("UNLOCKED") // LOCKED, UNLOCKED, COMPLETED
+  stars       Int       @default(0)
+  score       Int       @default(0)
+  completedAt DateTime?
+  updatedAt   DateTime  @updatedAt
+
+  @@unique([userId, lessonId])
+}
+
+model GameDestination {
+  id                  String        @id @default(uuid())
+  key                 String        @unique // 'time-travel', 'detective', etc.
+  titleKz             String
+  titleEn             String
+  descriptionKz       String
+  icon                String
+  requiredFragment    Int           @default(0)
+  rewardFragmentId    Int           @default(1)
+  gameSessions        GameSession[]
+}
+
+model GameSession {
+  id              String           @id @default(uuid())
+  userId          String
+  user            User             @relation(fields: [userId], references: [id], onDelete: Cascade)
+  gameKey         String
+  destination     GameDestination? @relation(fields: [gameKey], references: [key])
+  score           Int              @default(0)
+  stars           Int              @default(0)
+  xpEarned        Int              @default(0)
+  coinsEarned     Int              @default(0)
+  isCompleted     Boolean          @default(false)
+  details         Json?
+  createdAt       DateTime         @default(now())
+}
+
+model Artifact {
+  id            String         @id @default(uuid())
+  key           String         @unique
+  nameKz        String
+  nameEn        String
+  era           String
+  descriptionKz String
+  imageUrl      String?
+  rarity        ArtifactRarity @default(RARE)
+  userArtifacts UserArtifact[]
+}
+
+model UserArtifact {
+  id          String    @id @default(uuid())
+  userId      String
+  user        User      @relation(fields: [userId], references: [id], onDelete: Cascade)
+  artifactId  String
+  artifact    Artifact  @relation(fields: [artifactId], references: [id], onDelete: Cascade)
+  unlockedAt  DateTime  @default(now())
+
+  @@unique([userId, artifactId])
+}
+
+model DailyQuest {
+  id          String           @id @default(uuid())
+  titleKz     String
+  titleEn     String
+  targetCount Int              @default(1)
+  actionType  String           // 'LESSON_COMPLETE', 'EARN_XP', 'GAME_WIN'
+  xpReward    Int              @default(30)
+  coinReward  Int              @default(50)
+  userQuests  UserDailyQuest[]
+}
+
+model UserDailyQuest {
+  id          String     @id @default(uuid())
+  userId      String
+  user        User       @relation(fields: [userId], references: [id], onDelete: Cascade)
+  questId     String
+  quest       DailyQuest @relation(fields: [questId], references: [id], onDelete: Cascade)
+  progress    Int        @default(0)
+  isClaimed   Boolean    @default(false)
+  date        DateTime   @default(now())
+
+  @@unique([userId, questId, date])
+}
+
+model Achievement {
+  id               String            @id @default(uuid())
+  slug             String            @unique
+  titleKz          String
+  descriptionKz    String
+  badgeUrl         String?
+  xpReward         Int               @default(50)
+  userAchievements UserAchievement[]
+}
+
+model UserAchievement {
+  id            String      @id @default(uuid())
+  userId        String
+  user          User        @relation(fields: [userId], references: [id], onDelete: Cascade)
+  achievementId String
+  achievement   Achievement @relation(fields: [achievementId], references: [id], onDelete: Cascade)
+  unlockedAt    DateTime    @default(now())
+
+  @@unique([userId, achievementId])
+}
+
+model AiChatMessage {
+  id          String   @id @default(uuid())
+  userId      String
+  user        User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  role        String   // 'user' or 'assistant'
+  content     String
+  tokensUsed  Int      @default(0)
+  createdAt   DateTime @default(now())
+}
+
+model Certificate {
+  id                String   @id @default(uuid())
+  userId            String
+  user              User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  certificateNumber String   @unique
+  courseTitle       String
+  studentName       String
+  issuedAt          DateTime @default(now())
+  pdfUrl            String?
+}

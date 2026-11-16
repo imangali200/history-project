@@ -1,0 +1,174 @@
+@import "tailwindcss";
+
+@theme {
+  --color-on-secondary-fixed-variant: #594400;
+  --color-on-primary-container: #1e5000;
+  --color-secondary-fixed: #ffdf92;
+  --color-on-primary-fixed-variant: #1f5100;
+  --color-on-secondary-container: #6e5400;
+  --color-on-surface: #1b1c17;
+  --color-tertiary-fixed-dim: #88ceff;
+  --color-surface-container-high: #eae8e0;
+  --color-inverse-primary: #6be026;
+  --color-on-tertiary-fixed: #001e2e;
+  --color-outline: #6f7b64;
+  --color-error: #ba1a1a;
+  --color-surface-container-low: #f5f4ec;
+  --color-surface-tint: #2b6c00;
+  --color-primary: #2b6c00;
+  --color-on-primary: #ffffff;
+  --color-primary-fixed-dim: #6be026;
+  --color-tertiary: #006590;
+  --color-primary-container: #58cc02;
+  --color-tertiary-fixed: #c8e6ff;
+  --color-surface-container: #f0eee6;
+  --color-background: #fbf9f1;
+  --color-on-tertiary-fixed-variant: #004c6e;
+  --color-surface-container-highest: #e4e3db;
+  --color-on-error: #ffffff;
+  --color-secondary-fixed-dim: #f4bf00;
+  --color-on-secondary: #ffffff;
+  --color-secondary-container: #fec700;
+  --color-tertiary-container: #4abdff;
+  --color-surface-variant: #e4e3db;
+  --color-on-surface-variant: #3f4a36;
+  --color-on-primary-fixed: #082100;
+  --color-surface: #fbf9f1;
+  --color-on-secondary-fixed: #241a00;
+  --color-inverse-on-surface: #f3f1e9;
+  --color-surface-dim: #dcdad2;
+  --color-surface-bright: #fbf9f1;
+  --color-on-tertiary-container: #004a6b;
+  --color-primary-fixed: #87fe45;
+  --color-secondary: #755b00;
+  --color-on-error-container: #93000a;
+  --color-on-tertiary: #ffffff;
+  --color-on-background: #1b1c17;
+  --color-error-container: #ffdad6;
+  --color-surface-container-lowest: #ffffff;
+  --color-inverse-surface: #30312c;
+  --color-outline-variant: #becbb1;
+
+  --font-headline: "Plus Jakarta Sans", sans-serif;
+  --font-body: "Nunito Sans", sans-serif;
+  --font-label-lg: "Plus Jakarta Sans", sans-serif;
+  --font-headline-xl: "Plus Jakarta Sans", sans-serif;
+  --font-headline-lg: "Plus Jakarta Sans", sans-serif;
+  --font-headline-md: "Plus Jakarta Sans", sans-serif;
+  --font-label-md: "Plus Jakarta Sans", sans-serif;
+  --font-label-sm: "Plus Jakarta Sans", sans-serif;
+  --font-body-lg: "Nunito Sans", sans-serif;
+  --font-body-md: "Nunito Sans", sans-serif;
+  --font-body-sm: "Nunito Sans", sans-serif;
+
+  --spacing-space-xs: 0.25rem;
+  --spacing-space-sm: 0.5rem;
+  --spacing-space-md: 1rem;
+  --spacing-space-lg: 1.5rem;
+  --spacing-space-xl: 2.5rem;
+}
+
+@layer base {
+  html, body {
+    margin: 0;
+    padding: 0;
+  }
+  body {
+    overscroll-behavior: none;
+    background-color: #fbf9f1;
+    color: #1b1c17;
+    font-family: 'Nunito Sans', sans-serif;
+  }
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+/* Material Symbols fill helper */
+.material-symbols-filled {
+  font-variation-settings: 'FILL' 1, 'wght' 600, 'GRAD' 0, 'opsz' 24;
+}
+
+/* Smooth fade-in animation for tab transitions */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(8px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.animate-fadeIn {
+  animation: fadeIn 0.3s ease-out;
+}
+
+/* 3D Flashcard Flip utilities */
+.perspective-1000 {
+  perspective: 1000px;
+}
+.transform-style-3d {
+  transform-style: preserve-3d;
+}
+.backface-hidden {
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+.rotate-y-180 {
+  transform: rotateY(180deg);
+}
+
+
+/* ━━━━━━━━━━━━━━━━━ Enhanced Steppe Animations ━━━━━━━━━━━━━━━━━ */
+
+/* Shake animation for wrong answers */
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  15%, 45%, 75% { transform: translateX(-6px); }
+  30%, 60%, 90% { transform: translateX(6px); }
+}
+.animate-shake {
+  animation: shake 0.45s ease-in-out;
+}
+
+/* Slide in from left */
+@keyframes slideInLeft {
+  from { opacity: 0; transform: translateX(-20px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+.animate-slideInLeft {
+  animation: slideInLeft 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Slide in from right */
+@keyframes slideInRight {
+  from { opacity: 0; transform: translateX(20px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+.animate-slideInRight {
+  animation: slideInRight 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Pop in */
+@keyframes popIn {
+  0% { opacity: 0; transform: scale(0.9); }
+  70% { transform: scale(1.04); }
+  100% { opacity: 1; transform: scale(1); }
+}
+.animate-popIn {
+  animation: popIn 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Floating animation */
+@keyframes floatSlow {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-5px); }
+}
+.animate-float {
+  animation: floatSlow 3s ease-in-out infinite;
+}
+
+/* Glow Pulse for game streaks */
+@keyframes glowPulse {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(88, 204, 2, 0.45); }
+  50% { box-shadow: 0 0 16px 4px rgba(88, 204, 2, 0.25); }
+}
+.animate-glowPulse {
+  animation: glowPulse 2s infinite;
+}

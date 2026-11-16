@@ -1,0 +1,50 @@
+version: '3.8'
+
+services:
+  # NestJS Application
+  api:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: qazhistory_api
+    restart: always
+    ports:
+      - '4000:4000'
+    environment:
+      - NODE_ENV=production
+      - PORT=4000
+      - DATABASE_URL=postgresql://qazhistory:secure_steppe_pass_2026@postgres:5432/qazhistory_db?schema=public
+      - JWT_ACCESS_SECRET=qazhistory_steppe_access_secret_super_secure_key_2026
+      - REDIS_HOST=redis
+      - REDIS_PORT=6379
+    depends_on:
+      - postgres
+      - redis
+
+  # PostgreSQL 16 Database
+  postgres:
+    image: postgres:16-alpine
+    container_name: qazhistory_postgres
+    restart: always
+    environment:
+      POSTGRES_USER: qazhistory
+      POSTGRES_PASSWORD: secure_steppe_pass_2026
+      POSTGRES_DB: qazhistory_db
+    ports:
+      - '5432:5432'
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+  # Redis 7 In-Memory Cache
+  redis:
+    image: redis:7-alpine
+    container_name: qazhistory_redis
+    restart: always
+    ports:
+      - '6379:6379'
+    volumes:
+      - redis_data:/data
+
+volumes:
+  postgres_data:
+  redis_data:

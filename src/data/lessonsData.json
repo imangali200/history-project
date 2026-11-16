@@ -1,0 +1,1135 @@
+{
+  "lessons": {
+    "stone-age-1": {
+      "id": "stone-age-1",
+      "lessonNumber": 1,
+      "level": 1,
+      "unit": {
+        "kk": "Ежелгі Қазақстан • 1-Бөлім",
+        "en": "Ancient Kazakhstan • Unit 1"
+      },
+      "badge": {
+        "kk": "1-САБАҚ • ЖАҢА ТАҚЫРЫП",
+        "en": "LESSON 1 • NEW TOPIC"
+      },
+      "title": {
+        "kk": "Тас дәуірі",
+        "en": "Stone Age"
+      },
+      "subtitle": {
+        "kk": "Адамзаттың ең алғашқы қадамдары мен Ботай құпиялары",
+        "en": "The dawn of nomadic humanity, early flintcraft, and ancient steppe shelters."
+      },
+      "era": {
+        "kk": "Б.з.д. 2.6 млн - б.з.д. 2 мыңжылдық",
+        "en": "2.6M BCE - 2000 BCE"
+      },
+      "difficulty": {
+        "kk": "Базалық деңгей",
+        "en": "Beginner"
+      },
+      "duration": {
+        "kk": "5 минут",
+        "en": "5 min"
+      },
+      "baseXp": 20,
+      "bonusXp": 10,
+      "mascot": {
+        "name": "Барыс 🐾",
+        "introSpeech": {
+          "kk": "«Сәлем, жас тарихшы! Бүгін біз миллиондаған жыл бұрынғы бабаларымыздың ізімен саяхаттаймыз. Жаңа сөздермен танысып ал!»",
+          "en": "“Greetings, young historian! Today we retrace the footsteps of our ancestors from millions of years ago. Let's preview our new vocabulary!”"
+        },
+        "introAvatar": "https://lh3.googleusercontent.com/aida-public/AB6AXuApkbiEd384iaoo5KLY7-mAhMZp3LTugi5z9SGg02lmYyYAP9A5mRG8YOWMTjZCiHsvlog3NTPvldjOCKNSyFmo1UUlIG443w9YfgoHUFVc4GSdP79EaF35srA7HoOGl0Nh2hC7OX86yLcUBgQwGhWtseej0760EV2K5BNR-1nV5z2zeVU0IBuWhr-ctxb7mjBdT-0zQt3AJxypCd5NhlzuqkmpM6IaTUEC4miAXeOz",
+        "feedbackAvatar": "https://lh3.googleusercontent.com/aida-public/AB6AXuAtwVVjD1j-olSuIrtKlQ4w2UConRNeE1tTngUkmsedGGtARkXw7vqzgr3U3bWlQ9Y7R8rWi8QpP1tSowBpSXJT0vz2MdlAo9t6HlVk1SEgi_rFv-lXtrnBd5EACr_0LXjI2ajjCJPOR3Rllu6MkGTFr8ca_zdFp62aT4B1IEOSdPHPQ3uqnVcWoBuB3ygyxBHENmbWTjLqluTebAB1OCMUQVUHbxSufl17db1785FV",
+        "celebrateAvatar": "https://lh3.googleusercontent.com/aida-public/AB6AXuB4cgW2_R1hJUNbMO6HGprurbbavvZuUGR60qOmlVlZF2Sp0noTphy3Ozn1xGmAlTQGHHfRVDM8tF6fkQ44rJoD6fBT32fI_9RALdkm2Muk_jb54RrT7r_lbI_-k2-XmSz-pzHOn7ck25_mL8LsBfxAhbq_DLv6lyTkOqPJQbSa5x895h08doGPZ4Klj5wpuFt8_iwgy8vhQZmRnJvRgLaw-PQzaSe78rv-es8g1qCP"
+      },
+      "vocabulary": [
+        {
+          "id": "vocab-1",
+          "term": {
+            "kk": "Тас дәуірі",
+            "en": "Stone Age"
+          },
+          "partOfSpeech": {
+            "kk": "Зат есім",
+            "en": "Noun"
+          },
+          "pronunciation": "[Tas däwiri]",
+          "tag": {
+            "kk": "Негізгі дәуір",
+            "en": "Epoch"
+          },
+          "definition": {
+            "kk": "Адамзат тарихының тастан құрал жасаған ең ұзақ дәуірі.",
+            "en": "The earliest prehistoric period characterized by the shaping of stone tools."
+          },
+          "context": {
+            "kk": "Б.з.д. 2.6 миллион жылдан б.з.д. 2 мыңжылдыққа дейін созылды.",
+            "en": "Spanned from 2.6 million years ago until circa 2000 BCE."
+          },
+          "image": "https://lh3.googleusercontent.com/aida-public/AB6AXuCr-o5InUQ7wpcM3tXLeQZwaIagNkyLiuPYZJvGCF6lkOBch_S4iN3Har8O-fuv9l8GtT1mffuhu3L4pZu15-7b-jdkxViz-mQZzEEz-Cglvj1K1Af0NIhIXZmrVu9nsLrvykmHzP8HguFaeTA0dO97ORYDtLmHEQU3hyqPDixOixH0qbFr7SfuWRPuS-GwxXW3DG6OJ5FJyjKwcQj5iD4y0o1bSDN5yYKDKJ0oI77c"
+        },
+        {
+          "id": "vocab-2",
+          "term": {
+            "kk": "Құрал",
+            "en": "Tool / Implement"
+          },
+          "partOfSpeech": {
+            "kk": "Зат есім",
+            "en": "Noun"
+          },
+          "pronunciation": "[Qural]",
+          "tag": {
+            "kk": "Еңбек құралы",
+            "en": "Flintcraft"
+          },
+          "definition": {
+            "kk": "Аң аулауға, тері өңдеуге және еңбекке арналған кремнийден жасалған бұйым.",
+            "en": "Sharp lithic tool engineered by early hominids for chopping and hunting."
+          },
+          "context": {
+            "kk": "Ежелгі шеберлер кремний тасты соғу арқылы өткір шапқыштар жасаған.",
+            "en": "Crafted by knapping quartzite and flint cores to produce razor-sharp bifaces."
+          },
+          "image": "https://lh3.googleusercontent.com/aida-public/AB6AXuDVU4CykVnSbkU-S6fAxBCIg_36UCmNOhOmv3FIqNb7FqDSHoNx7sGsWE2duANgNBXxHEdueEZLUdTrzSVnVUPv9pjDd78Jm6sMMslbZrbQc2omeZ1_KaObOwFLR_ZBnAim6zssY_8gIcZZuldj-g3_-VkZ0yAqu39dxvaJN2oTftxe821qmdbEpB-wEiL7Q2u2Be1Z9sgwiAeiIPA9P_Zfo_h7Eod6310mxVlOICGZ"
+        },
+        {
+          "id": "vocab-3",
+          "term": {
+            "kk": "Отты игеру",
+            "en": "Control of Fire"
+          },
+          "partOfSpeech": {
+            "kk": "Тіркес",
+            "en": "Phrase"
+          },
+          "pronunciation": "[Otty igeru]",
+          "tag": {
+            "kk": "Ұлы жетістік",
+            "en": "Milestone"
+          },
+          "definition": {
+            "kk": "Жылынуға, тамақ пісіруге және жабайы аңдардан қорғануға мүмкіндік берген ұлы серпіліс.",
+            "en": "Harnessing hearth fire for thermal warmth, cooked nourishment, and predator defense."
+          },
+          "context": {
+            "kk": "От адамдардың ой-өрісін кеңейтіп, суық климатқа бейімделуге жол ашты.",
+            "en": "Catalyzed clan cohesion, safety in caves, and cognitive evolution."
+          },
+          "image": "https://lh3.googleusercontent.com/aida-public/AB6AXuA4SJtikfsddU7nkSPsQTDFQKA4R3ArArBpWWNMcYnxOc-Buf9BKT1Cx1ilYkKIWyVqOsi1pyYTmz3g0jlNSn8vWACGAXJYGhPUqzpi0hFWXAEVGe12r25ro6E6WL06wO-jpGH7UBGi_y2Um3L483oTe4IbhDmtW_uGRVwH6YNE-SPzWtVVcB5-IV0ioyZVMJGCe5ayIXlnFviwsbHMRnmSxftaykmI8a_axxvYQrHW"
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "type": "choice",
+          "badge": {
+            "kk": "СҰРАҚ 1/4 • КӨП ТАҢДАУ",
+            "en": "QUESTION 1/4 • MULTIPLE CHOICE"
+          },
+          "question": {
+            "kk": "Тас дәуірінде адамдар ең алғашқы құралдарды неден жасаған?",
+            "en": "What did people make the earliest tools from in the Stone Age?"
+          },
+          "image": "https://lh3.googleusercontent.com/aida-public/AB6AXuDfdNliMcSV1cQjfsmahch4bEAQStbMfekoXqkyhpipHcO2c3qEtGLQituPPrTBn4mvUtVlKh5Au6D85qDD6fKI7Q2L-OidqYnaoVj0Tl5Kcdf25rZNEIEFpbkCBKIObiXz_-TnIcUCUI8Q4yU4lso24owCy3-ebC2IowDBxwTMlZSvYkagCaOhWW1GyP5TLpH8SM15MielspVXiPmlopr97sk-UPGz-WhJVKBgF1yu",
+          "hint": {
+            "kk": "Дәуір атауы ең негізгі қолданылған табиғи қатты минералға тікелей байланысты!",
+            "en": "The name of this prehistoric age directly points to the hardest natural stone chipped by hominids!"
+          },
+          "options": [
+            {
+              "id": "opt-1",
+              "letter": "A",
+              "icon": "park",
+              "text": {
+                "kk": "Ағаш пен жапырақтардан",
+                "en": "Wood and leaves"
+              },
+              "subtext": {
+                "kk": "Тез шіритін органикалық заттар",
+                "en": "Fragile organic matter"
+              },
+              "tag": {
+                "kk": "Органика",
+                "en": "Organic"
+              },
+              "isCorrect": false,
+              "wrongFeedback": {
+                "kk": "Ағаш пайдаланылғанымен, ең негізгі берік кескіш құралдар тастан қашалды.",
+                "en: ": "Wood was utilized, but principal sharp implements were flaked from stone."
+              }
+            },
+            {
+              "id": "opt-2",
+              "letter": "B",
+              "icon": "landscape",
+              "text": {
+                "kk": "Тас пен кремнийден",
+                "en": "Stone and flint"
+              },
+              "subtext": {
+                "kk": "Өткір жүзді қатты минералдар",
+                "en": "Sharp chipped mineral cores"
+              },
+              "tag": {
+                "kk": "Дұрыс",
+                "en": "Correct"
+              },
+              "isCorrect": true
+            },
+            {
+              "id": "opt-3",
+              "letter": "C",
+              "icon": "hardware",
+              "text": {
+                "kk": "Қола мен жезден",
+                "en": "Bronze and brass"
+              },
+              "subtext": {
+                "kk": "Металлургия өнімдері",
+                "en": "Smelted metal alloys"
+              },
+              "tag": {
+                "kk": "Металл",
+                "en": "Metal"
+              },
+              "isCorrect": false,
+              "wrongFeedback": {
+                "kk": "Қола мен жез әлі ойлап табылмаған еді! Металлургия мыңдаған жылдан соң ғана басталды.",
+                "en": "Bronze and brass weren't invented yet! Metallurgy started millennia later in the Bronze Age."
+              }
+            },
+            {
+              "id": "opt-4",
+              "letter": "D",
+              "icon": "shield",
+              "text": {
+                "kk": "Темір мен болаттан",
+                "en": "Iron and steel"
+              },
+              "subtext": {
+                "kk": "Жоғары температурада балқитын металдар",
+                "en": "High furnace smelted materials"
+              },
+              "tag": {
+                "kk": "Темір",
+                "en": "Iron"
+              },
+              "isCorrect": false,
+              "wrongFeedback": {
+                "kk": "Темір б.з.д. I мыңжылдықта ғана игерілді.",
+                "en": "Iron technologies emerged far later in the 1st millennium BCE."
+              }
+            }
+          ],
+          "explanation": {
+            "kk": "Дұрыс жауап: Тас пен кремнийден! Ежелгі адамдар тасты бір-біріне соғу арқылы өткір шапқыштар жасаған.",
+            "en": "Correct answer: Stone and flint! Early humans chipped stone nodules to shape resilient sharp-edged bifaces."
+          },
+          "factoid": {
+            "kk": "Тарихи дерек: Қазақстан аумағындағы алғашқы тас құралдар Қаратау жотасынан (Шабақты, Тәңірқазған) табылған.",
+            "en": "Historical fact: Earliest stone implements in Kazakhstan were unearthed along the Karatau ridge (Shabaqty, Tanirkazgan)."
+          }
+        },
+        {
+          "id": "q2",
+          "type": "artifact",
+          "badge": {
+            "kk": "АРТЕФАКТ ТАНУ • СҰРАҚ 2/4",
+            "en": "ARTIFACT RECOGNITION • QUESTION 2/4"
+          },
+          "specimenId": "KZ-784",
+          "location": {
+            "kk": "Қаратау жотасы (Ерте палеолит)",
+            "en": "Karatau mountain ridge (Early Paleolithic)"
+          },
+          "image": "https://lh3.googleusercontent.com/aida-public/AB6AXuAhzBrqdfCKJjaZrYtdklNWEgza2hSCheXM4ssLHdJmeyDwd9ocTpwvI29oPgzzkBHrfevdr4xJ2c7usISgbkamh9E4fJJnHidNtqLFEUT7oUxXsO-5kH4cC1r-UgccHFCNQD0BlRyEgHQjCS_iFaxfNad7tSu9oSJ20yuanoQJ2CfLYjt8EQkfUhCBl3TdTp5LRSieuNOKbmZ5gMlGINplpFIKmeTU4MV4yK8xG2IK",
+          "question": {
+            "kk": "Бұл археологиялық құрал қалай аталады және не үшін қолданылған?",
+            "en": "What is this archaeological stone artifact and how was it used?"
+          },
+          "hint": {
+            "kk": "Ол екі жағынан да арнайы өңделген, сабы жоқ, қолмен ұсталатын ең алғашқы әмбебап құрал.",
+            "en": "It is a bifacial handaxe knapped on both surfaces, wielded directly by hand without a wooden haft."
+          },
+          "options": [
+            {
+              "id": "art-1",
+              "letter": "A",
+              "text": {
+                "kk": "Шапқыш (Қол шапқышы / Бифас)",
+                "en": "Handaxe (Chopper / Biface)"
+              },
+              "subtext": {
+                "kk": "Тас дәуірі • Paleolithic",
+                "en": "Stone Age • Paleolithic"
+              },
+              "description": {
+                "kk": "Ағаш кесуге, аң терісін және сүйектерін өңдеуге арналған негізгі құрал",
+                "en": "Primary multipurpose tool for dressing game, scraping hides, and chopping timber."
+              },
+              "isCorrect": true
+            },
+            {
+              "id": "art-2",
+              "letter": "B",
+              "text": {
+                "kk": "Қылыш (Дала семсері)",
+                "en": "Steppe Sabre"
+              },
+              "subtext": {
+                "kk": "Орта ғасырлар • Medieval",
+                "en": "Medieval Era"
+              },
+              "description": {
+                "kk": "Көшпелі сарбаздардың жақын шайқасқа арналған болат қаруы",
+                "en": "Forged steel slashing weapon wielded by nomadic cavalry centuries later."
+              },
+              "isCorrect": false,
+              "wrongFeedback": {
+                "kk": "Бұл тастан қашалған тас ғасырының құралы, металл семсер емес!",
+                "en": "This is a knapped flint stone handaxe, not a forged medieval blade!"
+              }
+            },
+            {
+              "id": "art-3",
+              "letter": "C",
+              "text": {
+                "kk": "Темір балға",
+                "en": "Iron Hammer"
+              },
+              "subtext": {
+                "kk": "Темір дәуірі • Iron Age",
+                "en": "Iron Age"
+              },
+              "description": {
+                "kk": "Ұстаханада металл қақтауға және үй құрылысына қолданылған ауыр құрал",
+                "en": "Heavy blacksmithing tool for forging metal billets."
+              },
+              "isCorrect": false,
+              "wrongFeedback": {
+                "kk": "Бұл палеолиттік шапқыш, оның темір дәуіріне қатысы жоқ.",
+                "en": "This artifact belongs to the Stone Age, centuries before iron forging."
+              }
+            },
+            {
+              "id": "art-4",
+              "letter": "D",
+              "text": {
+                "kk": "Садақ жебесі",
+                "en": "Arrowhead"
+              },
+              "subtext": {
+                "kk": "Қола дәуірі • Bronze Age",
+                "en": "Bronze Age"
+              },
+              "description": {
+                "kk": "Ұзақ қашықтықтан дала жануарларын аулауға және қорғанысқа арналған",
+                "en": "Lightweight projectile tip fitted onto reed arrows for archery."
+              },
+              "isCorrect": false,
+              "wrongFeedback": {
+                "kk": "Жебе ұшы өте кішкентай болады, ал мынау — салмақты қол шапқышы.",
+                "en": "Arrowheads are small projectile points, whereas this is a heavy palm-held axe."
+              }
+            }
+          ],
+          "explanation": {
+            "kk": "Дұрыс! Бұл — Қаратаудан табылған палеолит дәуірінің қол шапқышы (бифас). Ол алғашқы адамдардың ең әмбебап қаруы әрі еңбек құралы болған.",
+            "en": "Correct! This is a Paleolithic handaxe (biface) discovered in Karatau. It served as humanity's most versatile early implement."
+          },
+          "factoid": {
+            "kk": "Тарихи дерек: Қазақстанның оңтүстігіндегі Қаратау үңгірлерінен 5000-нан астам тас құрал табылған.",
+            "en": "Historical fact: Over 5,000 stone implements were unearthed in Karatau mountain shelters."
+          }
+        },
+        {
+          "id": "q_match_1",
+          "type": "match_pairs",
+          "badge": {
+            "kk": "СҰРАҚ 3/5 • ТАРИХИ ЖҰПТАРДЫ СӘЙКЕСТЕНДІРУ",
+            "en": "QUESTION 3/5 • MATCH HISTORICAL PAIRS"
+          },
+          "question": {
+            "kk": "Тарихи орындар мен олардың басты жетістіктерін өзара сәйкестендіріңіз",
+            "en": "Match each ancient steppe site with its hallmark archaeological breakthrough"
+          },
+          "hint": {
+            "kk": "Әрбір сол жақтағы орынға сәйкес келетін оң жақтағы жауапты басыңыз!",
+            "en": "Select an item on the left, then click its corresponding match on the right!"
+          },
+          "pairs": [
+            {
+              "id": "p1",
+              "left": {
+                "kk": "Ботай қонысы",
+                "en": "Botai Settlement"
+              },
+              "right": {
+                "kk": "Жылқыны алғаш үйрету",
+                "en": "First horse domestication"
+              }
+            },
+            {
+              "id": "p2",
+              "left": "Қаратау үңгірлері",
+              "leftObj": {
+                "kk": "Қаратау үңгірлері",
+                "en": "Karatau Shelters"
+              },
+              "right": {
+                "kk": "Ерте кремний шапқыштары",
+                "en": "Earliest flint handaxes"
+              }
+            },
+            {
+              "id": "p3",
+              "left": "Неолит дәуірі",
+              "leftObj": {
+                "kk": "Неолит дәуірі",
+                "en": "Neolithic Era"
+              },
+              "right": {
+                "kk": "Өндіруші шаруашылыққа көшу",
+                "en": "Farming & pottery shift"
+              }
+            },
+            {
+              "id": "p4",
+              "left": "Отты бағындыру",
+              "leftObj": {
+                "kk": "Отты бағындыру",
+                "en": "Control of Fire"
+              },
+              "right": {
+                "kk": "Суықтан жылыну мен аңнан қорғану",
+                "en": "Warmth & predator safety"
+              }
+            }
+          ],
+          "explanation": {
+            "kk": "Керемет! Барлық тарихи жұптар дәл табылды. Ботай — жылқының отаны, ал Қаратау — ең көне тас құралдар мекені.",
+            "en": "Brilliant! All historical connections matched perfectly. Botai pioneered horse culture and Karatau yielded ancient tools."
+          },
+          "factoid": {
+            "kk": "Ботайлықтар қыста жеркепелерде тұрып, жылқы сүйегінен тігін инелері мен құралдар жасаған.",
+            "en": "Botai inhabitants dwelt in semi-subterranean pit houses, fashioning bone needles and scrapers."
+          }
+        },
+        {
+          "id": "q3",
+          "type": "choice",
+          "badge": {
+            "kk": "СҰРАҚ 3/4 • ЭНЕОЛИТ ЖӘНЕ БОТАЙ",
+            "en": "QUESTION 3/4 • BOTAI & ENEOLITHIC"
+          },
+          "question": {
+            "kk": "Адамзат тарихында тұңғыш рет жабайы жылқы қай жерде қолға үйретілген?",
+            "en": "Where were wild horses domesticated for the first time in human history?"
+          },
+          "image": "https://lh3.googleusercontent.com/aida-public/AB6AXuCr-o5InUQ7wpcM3tXLeQZwaIagNkyLiuPYZJvGCF6lkOBch_S4iN3Har8O-fuv9l8GtT1mffuhu3L4pZu15-7b-jdkxViz-mQZzEEz-Cglvj1K1Af0NIhIXZmrVu9nsLrvykmHzP8HguFaeTA0dO97ORYDtLmHEQU3hyqPDixOixH0qbFr7SfuWRPuS-GwxXW3DG6OJ5FJyjKwcQj5iD4y0o1bSDN5yYKDKJ0oI77c",
+          "hint": {
+            "kk": "Солтүстік Қазақстандағы б.з.д. IV мыңжылдыққа жататын әйгілі энеолит мәдениеті қонысы.",
+            "en": "The renowned settlement in Northern Kazakhstan dating back to the 4th millennium BCE."
+          },
+          "options": [
+            {
+              "id": "bot-1",
+              "letter": "A",
+              "icon": "location_city",
+              "text": {
+                "kk": "Ботай тұрағында (Солтүстік Қазақстан)",
+                "en": "Botai Settlement (Northern Kazakhstan)"
+              },
+              "subtext": {
+                "kk": "Б.з.д. 3700–3100 жылдар",
+                "en": "3700–3100 BCE Eneolithic Culture"
+              },
+              "tag": {
+                "kk": "Энеолит",
+                "en": "Eneolithic"
+              },
+              "isCorrect": true
+            },
+            {
+              "id": "bot-2",
+              "letter": "B",
+              "icon": "water",
+              "text": {
+                "kk": "Месопотамия өзендері бойында",
+                "en": "Along Mesopotamian Rivers"
+              },
+              "subtext": {
+                "kk": "Тигр және Евфрат алқабы",
+                "en": "Tigris and Euphrates valley"
+              },
+              "tag": {
+                "kk": "Месопотамия",
+                "en": "Mesopotamia"
+              },
+              "isCorrect": false,
+              "wrongFeedback": {
+                "kk": "Месопотамияда егіншілік дамығанымен, жылқыны алғаш үйреткен далалық Ботайлықтар болды.",
+                "en": "Mesopotamia developed canal agriculture, but horses were first domesticated in Botai."
+              }
+            },
+            {
+              "id": "bot-3",
+              "letter": "C",
+              "icon": "account_balance",
+              "text": {
+                "kk": "Ежелгі Мысыр пирамидалары маңында",
+                "en": "Near Ancient Egyptian Pyramids"
+              },
+              "subtext": {
+                "kk": "Ніл өзенінің жағалауы",
+                "en": "Nile River valley"
+              },
+              "tag": {
+                "kk": "Мысыр",
+                "en": "Egypt"
+              },
+              "isCorrect": false,
+              "wrongFeedback": {
+                "kk": "Мысырға жылқы гиксостар арқылы әлдеқайда кейін келді.",
+                "en": "Horses entered Egypt millennia later through foreign travelers."
+              }
+            },
+            {
+              "id": "bot-4",
+              "letter": "D",
+              "icon": "temple_hindu",
+              "text": {
+                "kk": "Үндістанның Ганг алқабында",
+                "en": "Indus and Ganges Valley"
+              },
+              "subtext": {
+                "kk": "Хараппа және Мохенджо-Даро",
+                "en": "Harappan settlements"
+              },
+              "tag": {
+                "kk": "Үндістан",
+                "en": "India"
+              },
+              "isCorrect": false,
+              "wrongFeedback": {
+                "kk": "Үнді өркениеті пілдер мен өгіздерді пайдаланды, жылқының отаны — қазақ даласы.",
+                "en": "The Indus valley harnessed cattle; the horse's home is the Eurasian steppe."
+              }
+            }
+          ],
+          "explanation": {
+            "kk": "Дұрыс! Ғалымдар Ботай қонысындағы қыш ыдыстардан қымыздың (жылқы сүтінің) іздерін анықтаған.",
+            "en": "Correct! Scientists discovered traces of mare's milk (kumis) in ceramic sherds from Botai."
+          },
+          "factoid": {
+            "kk": "Тарихи дерек: Ботайда 300 000-нан астам жылқы сүйегі мен ауыздық іздері табылды.",
+            "en": "Historical fact: Over 300,000 horse bones and bridle wear marks were uncovered at Botai."
+          }
+        },
+        {
+          "id": "q4",
+          "type": "choice",
+          "badge": {
+            "kk": "СҰРАҚ 4/4 • КЕЗЕҢДЕР ТІЗБЕГІ",
+            "en": "QUESTION 4/4 • CHRONOLOGY"
+          },
+          "question": {
+            "kk": "Тас дәуірі қандай үш негізгі кезеңге бөлінеді?",
+            "en": "Which three core periods make up the Stone Age in chronological order?"
+          },
+          "image": "https://lh3.googleusercontent.com/aida-public/AB6AXuA4SJtikfsddU7nkSPsQTDFQKA4R3ArArBpWWNMcYnxOc-Buf9BKT1Cx1ilYkKIWyVqOsi1pyYTmz3g0jlNSn8vWACGAXJYGhPUqzpi0hFWXAEVGe12r25ro6E6WL06wO-jpGH7UBGi_y2Um3L483oTe4IbhDmtW_uGRVwH6YNE-SPzWtVVcB5-IV0ioyZVMJGCe5ayIXlnFviwsbHMRnmSxftaykmI8a_axxvYQrHW",
+          "hint": {
+            "kk": "Грек тілінде 'палеос' — көне, 'мезос' — орта, 'неос' — жаңа дегенді білдіреді.",
+            "en": "In Greek, 'paleo' means ancient, 'meso' means middle, and 'neo' means new."
+          },
+          "options": [
+            {
+              "id": "chr-1",
+              "letter": "A",
+              "icon": "timeline",
+              "text": {
+                "kk": "Палеолит → Мезолит → Неолит",
+                "en": "Paleolithic → Mesolithic → Neolithic"
+              },
+              "subtext": {
+                "kk": "Ерте тас → Орта тас → Жаңа тас",
+                "en": "Early → Middle → New Stone Age"
+              },
+              "tag": {
+                "kk": "Дұрыс",
+                "en": "Correct"
+              },
+              "isCorrect": true
+            },
+            {
+              "id": "chr-2",
+              "letter": "B",
+              "icon": "history",
+              "text": {
+                "kk": "Қола → Темір → Орта ғасыр",
+                "en": "Bronze → Iron → Middle Ages"
+              },
+              "subtext": {
+                "kk": "Металл дәуірлері",
+                "en": "Metal ages"
+              },
+              "tag": {
+                "kk": "Металл",
+                "en": "Metals"
+              },
+              "isCorrect": false,
+              "wrongFeedback": {
+                "kk": "Бұлар тас дәуірінен кейін келген металл дәуірлері.",
+                "en": "These epochs succeeded the stone age after metallurgy was discovered."
+              }
+            },
+            {
+              "id": "chr-3",
+              "letter": "C",
+              "icon": "shuffle",
+              "text": {
+                "kk": "Неолит → Палеолит → Мезолит",
+                "en": "Neolithic → Paleolithic → Mesolithic"
+              },
+              "subtext": {
+                "kk": "Реті шатастырылған",
+                "en": "Incorrect chronological order"
+              },
+              "tag": {
+                "kk": "Қате рет",
+                "en": "Wrong Order"
+              },
+              "isCorrect": false,
+              "wrongFeedback": {
+                "kk": "Неолит — ең соңғы (жаңа) тас кезеңі, ал Палеолит — ең алғашқысы.",
+                "en": "Neolithic is the latest (New Stone) period, while Paleolithic is the earliest."
+              }
+            },
+            {
+              "id": "chr-4",
+              "letter": "D",
+              "icon": "castle",
+              "text": {
+                "kk": "Сақтар → Ғұндар → Түрік қағанаты",
+                "en": "Sakas → Huns → Turkic Khaganate"
+              },
+              "subtext": {
+                "kk": "Ерте көшпелілер мемлекеттері",
+                "en": "Early steppe empires"
+              },
+              "tag": {
+                "kk": "Мемлекеттер",
+                "en": "States"
+              },
+              "isCorrect": false,
+              "wrongFeedback": {
+                "kk": "Бұлар — ежелгі көшпелілердің мемлекеттік одақтары мен қағанаттары.",
+                "en": "These represent nomad federations and early medieval empires."
+              }
+            }
+          ],
+          "explanation": {
+            "kk": "Тамаша! Палеолит (б.з.д. 2.6 млн - 12 мың жыл), Мезолит (б.з.д. 12 - 5 мың жыл), Неолит (б.з.д. 5 - 3 мың жыл).",
+            "en": "Splendid! Paleolithic (2.6M - 12k BCE), Mesolithic (12k - 5k BCE), Neolithic (5k - 3k BCE)."
+          },
+          "factoid": {
+            "kk": "Тарихи дерек: Неолит дәуірінде адамзат 'Неолиттік төңкеріс' жасап, терімшіліктен өндіруші шаруашылыққа өтті.",
+            "en": "Historical fact: In the Neolithic, humans underwent the 'Neolithic Revolution', transitioning from foraging to food production."
+          }
+        }
+      ],
+      "celebration": {
+        "trophyTitle": {
+          "kk": "Керемет нәтиже, Батыр! 🏆",
+          "en": "Great result, Hero! 🏆"
+        },
+        "subtitle": {
+          "kk": "Сен «Тас дәуірі» сабағын сәтті аяқтадың!",
+          "en": "You successfully completed the Stone Age lesson!"
+        },
+        "stars": 3,
+        "xpTotal": 30,
+        "xpBonus": 10,
+        "badge": {
+          "id": "badge-stone-explorer",
+          "title": {
+            "kk": "Алғашқы саяхатшы",
+            "en": "First Explorer"
+          },
+          "tag": {
+            "kk": "ЖАҢА ТАРИХИ ЖЕТІСТІК",
+            "en": "NEW BADGE UNLOCKED"
+          },
+          "description": {
+            "kk": "Ежелгі Қазақстан тарихының бастауымен танысып, алғашқы қадам жасадың!",
+            "en": "Completed the foundation of ancient Kazakh history and took your first step!"
+          },
+          "icon": "explore"
+        }
+      },
+      "videoLesson": {
+        "title": {
+          "kk": "Тас дәуірі: Адамзаттың ең алғашқы қадамдары мен Қаратау құпиялары",
+          "en": "The Stone Age: Dawn of Steppe Humanity & Karatau Mysteries"
+        },
+        "instructor": "SDU Қазақстан тарихы кафедрасы",
+        "duration": "3:45",
+        "poster": "https://lh3.googleusercontent.com/aida-public/AB6AXuCr-o5InUQ7wpcM3tXLeQZwaIagNkyLiuPYZJvGCF6lkOBch_S4iN3Har8O-fuv9l8GtT1mffuhu3L4pZu15-7b-jdkxViz-mQZzEEz-Cglvj1K1Af0NIhIXZmrVu9nsLrvykmHzP8HguFaeTA0dO97ORYDtLmHEQU3hyqPDixOixH0qbFr7SfuWRPuS-GwxXW3DG6OJ5FJyjKwcQj5iD4y0o1bSDN5yYKDKJ0oI77c",
+        "videoUrl": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4",
+        "embedYoutube": "https://www.youtube.com/embed/dQw4w9WgXcQ",
+        "overview": {
+          "kk": "Бұл қысқа бейнедәрісте біз б.з.д. 2.6 миллион жыл бұрын басталған Палеолит, Мезолит және Неолит кезеңдерін, ежелгі адамдардың кремнийден алғашқы құралдарды қалай жасағанын және Ботай қонысындағы жылқыны қолға үйрету тарихын көзбен көреміз.",
+          "en": "In this video lesson, we explore Paleolithic, Mesolithic, and Neolithic eras starting 2.6M BCE, discovering how early hominids knapped flint tools and the revolutionary Botai horse domestication."
+        },
+        "chapters": [
+          {
+            "time": "0:00",
+            "title": {
+              "kk": "Палеолит дәуірі мен адам эволюциясы",
+              "en": "Paleolithic Era & Human Evolution"
+            },
+            "desc": {
+              "kk": "Ежелгі климат, аңшылық пен терімшілік кезеңі",
+              "en": "Prehistoric climate, foraging, and early hunting clans"
+            }
+          },
+          {
+            "time": "1:10",
+            "title": {
+              "kk": "Қаратау шапқыштары (Бифастар)",
+              "en": "Karatau Flint Handaxes (Bifaces)"
+            },
+            "desc": {
+              "kk": "Шабақты мен Тәңірқазған тұрақтарынан табылған кремний құралдар",
+              "en": "Excavations of early flint flakes in southern Kazakhstan"
+            }
+          },
+          {
+            "time": "2:25",
+            "title": {
+              "kk": "Ботай феномені және Неолит төңкерісі",
+              "en": "Botai Phenomenon & Neolithic Shift"
+            },
+            "desc": {
+              "kk": "Дүниежүзінде алғаш рет жабайы жылқыны үйрету және қымыз өндірісі",
+              "en": "World earliest horse domestication and mare milk pottery evidence"
+            }
+          }
+        ],
+        "keyTakeaways": [
+          {
+            "icon": "handyman",
+            "title": {
+              "kk": "Кремний өңдеу өнері",
+              "en": "Flint Knapping"
+            },
+            "text": {
+              "kk": "Адамдар ең алғашқы құралдарды металдан емес, кремний мен обсидианды соғу арқылы жасаған.",
+              "en": "Early humans shaped durable cutting edges by knapping flint cores rather than smelting metal."
+            }
+          },
+          {
+            "icon": "fireplace",
+            "title": {
+              "kk": "Отты бағындыру",
+              "en": "Control of Fire"
+            },
+            "text": {
+              "kk": "От аңдардан қорғануға, суық қыстарда жылынуға және етті пісіріп қоректенуге жол ашты.",
+              "en": "Fire unlocked thermal survival during ice ages, night defense, and cooked nutrition."
+            }
+          },
+          {
+            "icon": "pets",
+            "title": {
+              "kk": "Ботай және жылқы",
+              "en": "Botai & Steppe Horses"
+            },
+            "text": {
+              "kk": "Солтүстік Қазақстандағы Ботай қонысы — адамзат тарихында жылқыны алғаш үйреткен мәдениет.",
+              "en": "Northern Kazakhstan Botai settlement marks the earliest horse domestication in global archaeology."
+            }
+          }
+        ]
+      }
+    },
+    "saka-1": {
+      "id": "saka-1",
+      "lessonNumber": 2,
+      "level": 1,
+      "unit": {
+        "kk": "Сақтар мен Ғұндар • 2-Бөлім",
+        "en": "Saka & Huns • Unit 2"
+      },
+      "badge": {
+        "kk": "2-САБАҚ • САҚ КҮНТІЗБЕСІ",
+        "en": "LESSON 2 • SAKA CULTURE"
+      },
+      "title": {
+        "kk": "Сақтар дәуірі және Алтын адам",
+        "en": "The Saka Era and Golden Man"
+      },
+      "subtitle": {
+        "kk": "Есік қорғаны құпиялары мен Томирис ерлігі",
+        "en": "Mysteries of Issyk Kurgan and Queen Tomyris' valor."
+      },
+      "era": {
+        "kk": "Б.з.д. VIII - III ғасырлар",
+        "en": "8th - 3rd Century BCE"
+      },
+      "difficulty": {
+        "kk": "Орта деңгей",
+        "en": "Intermediate"
+      },
+      "duration": {
+        "kk": "6 минут",
+        "en": "6 min"
+      },
+      "baseXp": 25,
+      "bonusXp": 10,
+      "mascot": {
+        "name": "Барыс 🐾",
+        "introSpeech": {
+          "kk": "«Ұлы сақ жауынгерлері мен алтын киімді батырлар әлеміне қош келдің!»",
+          "en": "“Welcome to the realm of brave Saka warriors and the Golden Man!”"
+        },
+        "introAvatar": "https://lh3.googleusercontent.com/aida-public/AB6AXuApkbiEd384iaoo5KLY7-mAhMZp3LTugi5z9SGg02lmYyYAP9A5mRG8YOWMTjZCiHsvlog3NTPvldjOCKNSyFmo1UUlIG443w9YfgoHUFVc4GSdP79EaF35srA7HoOGl0Nh2hC7OX86yLcUBgQwGhWtseej0760EV2K5BNR-1nV5z2zeVU0IBuWhr-ctxb7mjBdT-0zQt3AJxypCd5NhlzuqkmpM6IaTUEC4miAXeOz",
+        "feedbackAvatar": "https://lh3.googleusercontent.com/aida-public/AB6AXuAtwVVjD1j-olSuIrtKlQ4w2UConRNeE1tTngUkmsedGGtARkXw7vqzgr3U3bWlQ9Y7R8rWi8QpP1tSowBpSXJT0vz2MdlAo9t6HlVk1SEgi_rFv-lXtrnBd5EACr_0LXjI2ajjCJPOR3Rllu6MkGTFr8ca_zdFp62aT4B1IEOSdPHPQ3uqnVcWoBuB3ygyxBHENmbWTjLqluTebAB1OCMUQVUHbxSufl17db1785FV",
+        "celebrateAvatar": "https://lh3.googleusercontent.com/aida-public/AB6AXuB4cgW2_R1hJUNbMO6HGprurbbavvZuUGR60qOmlVlZF2Sp0noTphy3Ozn1xGmAlTQGHHfRVDM8tF6fkQ44rJoD6fBT32fI_9RALdkm2Muk_jb54RrT7r_lbI_-k2-XmSz-pzHOn7ck25_mL8LsBfxAhbq_DLv6lyTkOqPJQbSa5x895h08doGPZ4Klj5wpuFt8_iwgy8vhQZmRnJvRgLaw-PQzaSe78rv-es8g1qCP"
+      },
+      "vocabulary": [
+        {
+          "id": "vocab-saka-1",
+          "term": {
+            "kk": "Алтын адам",
+            "en": "Golden Man"
+          },
+          "partOfSpeech": {
+            "kk": "Атау",
+            "en": "Noun"
+          },
+          "pronunciation": "[Altyn adam]",
+          "tag": {
+            "kk": "Мұра",
+            "en": "Heritage"
+          },
+          "definition": {
+            "kk": "1969 жылы Есік қорғанынан табылған 4000-нан астам алтын әшекейлі сақ жауынгері.",
+            "en": "Saka prince discovered in 1969 in Issyk Kurgan adorned with over 4,000 pure gold ornaments."
+          },
+          "context": {
+            "kk": "Қазақстанның еркіндігі мен мемлекеттілігінің ұлттық рәмізіне айналды.",
+            "en": "Became a worldwide symbol of Kazakhstan's ancient sovereign civilization."
+          },
+          "image": "https://lh3.googleusercontent.com/aida-public/AB6AXuAhzBrqdfCKJjaZrYtdklNWEgza2hSCheXM4ssLHdJmeyDwd9ocTpwvI29oPgzzkBHrfevdr4xJ2c7usISgbkamh9E4fJJnHidNtqLFEUT7oUxXsO-5kH4cC1r-UgccHFCNQD0BlRyEgHQjCS_iFaxfNad7tSu9oSJ20yuanoQJ2CfLYjt8EQkfUhCBl3TdTp5LRSieuNOKbmZ5gMlGINplpFIKmeTU4MV4yK8xG2IK"
+        }
+      ],
+      "questions": [
+        {
+          "id": "sq1",
+          "type": "choice",
+          "badge": {
+            "kk": "СҰРАҚ 1/2 • АЛТЫН АДАМ",
+            "en": "QUESTION 1/2 • GOLDEN MAN"
+          },
+          "question": {
+            "kk": "1969 жылы Есік қорғанынан табылған әйгілі сақ жауынгері қалай аталады?",
+            "en": "What is the name of the famous Saka warrior discovered at Issyk Kurgan in 1969?"
+          },
+          "image": "https://lh3.googleusercontent.com/aida-public/AB6AXuAhzBrqdfCKJjaZrYtdklNWEgza2hSCheXM4ssLHdJmeyDwd9ocTpwvI29oPgzzkBHrfevdr4xJ2c7usISgbkamh9E4fJJnHidNtqLFEUT7oUxXsO-5kH4cC1r-UgccHFCNQD0BlRyEgHQjCS_iFaxfNad7tSu9oSJ20yuanoQJ2CfLYjt8EQkfUhCBl3TdTp5LRSieuNOKbmZ5gMlGINplpFIKmeTU4MV4yK8xG2IK",
+          "hint": {
+            "kk": "Оның киімі мен бас киімі 4000-нан астам таза алтын бұйыммен көмкерілген.",
+            "en": "Adorned with over 4,000 pure gold decorative plates and animal style motifs."
+          },
+          "options": [
+            {
+              "id": "sopt-1",
+              "letter": "A",
+              "icon": "shield",
+              "text": {
+                "kk": "Күміс сарбаз",
+                "en": "Silver Knight"
+              },
+              "subtext": {
+                "kk": "Күміс қару-жарақ",
+                "en": "Silver mail"
+              },
+              "tag": {
+                "kk": "Қате",
+                "en": "Incorrect"
+              },
+              "isCorrect": false
+            },
+            {
+              "id": "sopt-2",
+              "letter": "B",
+              "icon": "workspace_premium",
+              "text": {
+                "kk": "«Алтын адам» (Golden Man)",
+                "en": "\"Golden Man\" (Altyn Adam)"
+              },
+              "subtext": {
+                "kk": "Есік қорғаны ханзадасы",
+                "en": "Prince of Issyk Kurgan"
+              },
+              "tag": {
+                "kk": "Дұрыс",
+                "en": "Correct"
+              },
+              "isCorrect": true
+            },
+            {
+              "id": "sopt-3",
+              "letter": "C",
+              "icon": "swords",
+              "text": {
+                "kk": "Қола батыр",
+                "en": "Bronze Champion"
+              },
+              "subtext": {
+                "kk": "Қола дәуірі",
+                "en": "Bronze age"
+              },
+              "tag": {
+                "kk": "Қате",
+                "en": "Incorrect"
+              },
+              "isCorrect": false
+            },
+            {
+              "id": "sopt-4",
+              "letter": "D",
+              "icon": "military_tech",
+              "text": {
+                "kk": "Дала тарханы",
+                "en": "Steppe Tarkhan"
+              },
+              "subtext": {
+                "kk": "Түркі дәуірі атағы",
+                "en": "Turkic noble title"
+              },
+              "tag": {
+                "kk": "Қате",
+                "en": "Incorrect"
+              },
+              "isCorrect": false
+            }
+          ],
+          "explanation": {
+            "kk": "«Алтын адам» — археолог Кемал Ақышев тапқан әлемдік деңгейдегі сенсациялық жаңалық.",
+            "en": "The Golden Man was unearthed by archeologist Kemal Akishev, capturing global historical renown."
+          },
+          "factoid": {
+            "kk": "Тарихи дерек: Оның жанында 26 таңбалы көне күміс тостаған табылды (Есік жазуы).",
+            "en": "Historical fact: Alongside the prince, a silver bowl inscribed with 26 ancient Saka runic symbols was found."
+          }
+        },
+        {
+          "id": "sq2",
+          "type": "choice",
+          "badge": {
+            "kk": "СҰРАҚ 2/2 • ТОМИРИС",
+            "en": "QUESTION 2/2 • TOMYRIS"
+          },
+          "question": {
+            "kk": "Б.з.д. 530 жылы Парсы патшасы Кирдің әскерін талқандаған сақ патшайымы кім?",
+            "en": "Which Saka warrior queen defeated Persian King Cyrus the Great in 530 BC?"
+          },
+          "image": "https://lh3.googleusercontent.com/aida-public/AB6AXuCr-o5InUQ7wpcM3tXLeQZwaIagNkyLiuPYZJvGCF6lkOBch_S4iN3Har8O-fuv9l8GtT1mffuhu3L4pZu15-7b-jdkxViz-mQZzEEz-Cglvj1K1Af0NIhIXZmrVu9nsLrvykmHzP8HguFaeTA0dO97ORYDtLmHEQU3hyqPDixOixH0qbFr7SfuWRPuS-GwxXW3DG6OJ5FJyjKwcQj5iD4y0o1bSDN5yYKDKJ0oI77c",
+          "hint": {
+            "kk": "Ол өз халқының бостандығы үшін күресіп, даңқты жеңіске жеткен ұлы массагет анасы.",
+            "en": "The iconic Massagetae ruler who defended sovereign steppe freedom."
+          },
+          "options": [
+            {
+              "id": "sq2-1",
+              "letter": "A",
+              "icon": "person",
+              "text": {
+                "kk": "Зарина патшайым",
+                "en": "Queen Zarina"
+              },
+              "subtext": {
+                "kk": "Сақ билеушісі",
+                "en": "Saka ruler"
+              },
+              "tag": {
+                "kk": "Қате",
+                "en": "Incorrect"
+              },
+              "isCorrect": false
+            },
+            {
+              "id": "sq2-2",
+              "letter": "B",
+              "icon": "shield",
+              "text": {
+                "kk": "Томирис (Тұмар)",
+                "en": "Queen Tomyris"
+              },
+              "subtext": {
+                "kk": "Массагеттер патшайымы",
+                "en": "Queen of Massagetae"
+              },
+              "tag": {
+                "kk": "Дұрыс",
+                "en": "Correct"
+              },
+              "isCorrect": true
+            },
+            {
+              "id": "sq2-3",
+              "letter": "C",
+              "icon": "person_4",
+              "text": {
+                "kk": "Бопай ханым",
+                "en": "Khanym Bopai"
+              },
+              "subtext": {
+                "kk": "Кенесарының қарындасы",
+                "en": "Sister of Kenesary"
+              },
+              "tag": {
+                "kk": "Қате",
+                "en": "Incorrect"
+              },
+              "isCorrect": false
+            },
+            {
+              "id": "sq2-4",
+              "letter": "D",
+              "icon": "female",
+              "text": {
+                "kk": "Айғаным ханым",
+                "en": "Aiganym Khanym"
+              },
+              "subtext": {
+                "kk": "Шоқан Уәлихановтың әжесі",
+                "en": "Grandmother of Chokan"
+              },
+              "tag": {
+                "kk": "Қате",
+                "en": "Incorrect"
+              },
+              "isCorrect": false
+            }
+          ],
+          "explanation": {
+            "kk": "Томирис парсы патшасы Кирге: «Қанға тоймаған патша, енді өз қаныңды іш!» деп даңқты жеңіске жеткен.",
+            "en": "Tomyris famously triumphed over Cyrus the Great, protecting steppe freedom."
+          },
+          "factoid": {
+            "kk": "Тарихи дерек: Бұл шайқас туралы көне грек тарихшысы Геродот өз еңбектерінде егжей-тегжейлі жазған.",
+            "en": "Historical fact: The ancient Greek historian Herodotus chronicled this battle in vivid detail."
+          }
+        }
+      ],
+      "celebration": {
+        "trophyTitle": {
+          "kk": "Даңқты Жеңіс, Батыр! 🏆",
+          "en": "Glorious Victory, Hero! 🏆"
+        },
+        "subtitle": {
+          "kk": "Сен Сақтар мен Алтын адам сабағын сәтті аяқтадың!",
+          "en": "You conquered the Saka Era & Golden Man lesson!"
+        },
+        "stars": 3,
+        "xpTotal": 35,
+        "xpBonus": 10,
+        "badge": {
+          "id": "badge-saka-warrior",
+          "title": {
+            "kk": "Сақ Батыры",
+            "en": "Saka Champion"
+          },
+          "tag": {
+            "kk": "ЖАҢА ТАРИХИ ЖЕТІСТІК",
+            "en": "NEW BADGE UNLOCKED"
+          },
+          "description": {
+            "kk": "Есік қорғаны мен Томирис тарихын толық игердің!",
+            "en": "Mastered Issyk Kurgan and Queen Tomyris' history!"
+          },
+          "icon": "workspace_premium"
+        }
+      },
+      "videoLesson": {
+        "title": {
+          "kk": "Сақтар дәуірі: Есік қорғаны, Алтын адам және Томирис патшайым",
+          "en": "The Saka Era: Issyk Kurgan, Golden Man & Queen Tomyris"
+        },
+        "instructor": "SDU Қазақстан тарихы кафедрасы",
+        "duration": "4:10",
+        "poster": "https://lh3.googleusercontent.com/aida-public/AB6AXuAhzBrqdfCKJjaZrYtdklNWEgza2hSCheXM4ssLHdJmeyDwd9ocTpwvI29oPgzzkBHrfevdr4xJ2c7usISgbkamh9E4fJJnHidNtqLFEUT7oUxXsO-5kH4cC1r-UgccHFCNQD0BlRyEgHQjCS_iFaxfNad7tSu9oSJ20yuanoQJ2CfLYjt8EQkfUhCBl3TdTp5LRSieuNOKbmZ5gMlGINplpFIKmeTU4MV4yK8xG2IK",
+        "videoUrl": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4",
+        "embedYoutube": "https://www.youtube.com/embed/dQw4w9WgXcQ",
+        "overview": {
+          "kk": "Бұл видеодәрісте біз көшпелілер өркениетінің алтын дәуірін — Сақ мемлекеттік бірлестіктерін, 1969 жылы табылған Алтын адамның 4000-нан астам әшекейін және Томирис патшайымның Парсы патшасы Кирге қарсы даңқты шайқасын зерттейміз.",
+          "en": "In this video lesson, we explore the golden age of nomadic culture — Saka federations, the 4,000 pure gold ornaments of the Golden Man, and Queen Tomyris historic stand against Cyrus the Great."
+        },
+        "chapters": [
+          {
+            "time": "0:00",
+            "title": {
+              "kk": "Сақ қоғамы мен Аң стилі өнері",
+              "en": "Saka Society & Animal Style Art"
+            },
+            "desc": {
+              "kk": "Көшпелі өмір салты және алтын зергерлік бұйымдар",
+              "en": "Nomadic horsemanship and stylized animal iconography"
+            }
+          },
+          {
+            "time": "1:30",
+            "title": {
+              "kk": "Есік қорғаны және Алтын адам",
+              "en": "Issyk Kurgan & Golden Man Discovery"
+            },
+            "desc": {
+              "kk": "Кемал Ақышев экспедициясы және 26 таңбалы көне жазу",
+              "en": "Kemal Akishev archaeological excavation and Saka runic bowl"
+            }
+          },
+          {
+            "time": "2:50",
+            "title": {
+              "kk": "Томирис ерлігі және б.з.д. 530 жыл",
+              "en": "Queen Tomyris & the 530 BCE Battle"
+            },
+            "desc": {
+              "kk": "Парсы патшасы Кирді талқандаған ұлы шайқас",
+              "en": "Legendary victory preserving steppe sovereignty"
+            }
+          }
+        ],
+        "keyTakeaways": [
+          {
+            "icon": "workspace_premium",
+            "title": {
+              "kk": "Алтын адам (б.з.д. V-IV ғ.)",
+              "en": "The Golden Man"
+            },
+            "text": {
+              "kk": "Есік қорғанынан табылған сақ ханзадасы 4000-нан астам алтын бұйыммен көмкерілген.",
+              "en": "Discovered in Issyk Kurgan, clothed in over 4,000 gold foil appliques."
+            }
+          },
+          {
+            "icon": "shield",
+            "title": {
+              "kk": "Томирис жеңісі",
+              "en": "Tomyris Victory"
+            },
+            "text": {
+              "kk": "Б.з.д. 530 жылы сақтар әскері парсы басқыншыларын жеңіп, дала еркіндігін сақтап қалды.",
+              "en": "In 530 BCE, Saka warriors defeated Cyrus the Great, protecting steppe freedom."
+            }
+          }
+        ]
+      }
+    }
+  }
+}
