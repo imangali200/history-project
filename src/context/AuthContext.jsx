@@ -26,9 +26,6 @@ const DEFAULT_STUDENT = {
 export function AuthProvider({ children }) {
   const [user, setUser] = useState(() => {
     try {
-      if (localStorage.getItem(LOGGED_OUT_KEY) === 'true') {
-        return null;
-      }
       const saved = localStorage.getItem(STORAGE_KEY);
       if (saved) {
         const parsed = JSON.parse(saved);
@@ -37,9 +34,10 @@ export function AuthProvider({ children }) {
         }
         return parsed;
       }
-      return DEFAULT_STUDENT;
+      // Top-notch Auth: New guests must log into their own account!
+      return null;
     } catch {
-      return DEFAULT_STUDENT;
+      return null;
     }
   });
 
@@ -86,6 +84,7 @@ export function AuthProvider({ children }) {
     try {
       localStorage.setItem(LOGGED_OUT_KEY, 'true');
       localStorage.removeItem(STORAGE_KEY);
+      localStorage.removeItem('qazhistory_token');
     } catch {}
     setUser(null);
   };
