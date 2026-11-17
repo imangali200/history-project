@@ -31,6 +31,11 @@ export default function Navbar({ sidebarCollapsed = false }) {
           <span className="material-symbols-outlined text-sm text-primary">badge</span>
           <span>ID: {user.studentId || '—'}</span>
         </div>
+
+        {/* CLIL Dual-Learning Badge */}
+        <div className="hidden md:flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-secondary-fixed/40 text-on-secondary-fixed text-[11px] font-headline font-black uppercase tracking-wider border border-secondary-fixed/60">
+          <span>🇰🇿 Тарих + 🇬🇧 English CLIL</span>
+        </div>
       </div>
 
       {/* ── Right: Stats & Right-aligned Language Switcher ── */}

@@ -4,23 +4,23 @@ import { useTranslation } from 'react-i18next';
 const KNOWLEDGE_BASE_KK = [
   {
     keywords: ['ботай', 'жылқы', 'мал', 'botai', 'horse'],
-    answer: 'Ботай мәдениеті (б.з.д. IV–III мыңжылдықтар) — Солтүстік Қазақстан аумағындағы энеолит дәуірінің әлемге әйгілі мәдениеті. Дәл осы жерде адамзат тарихында ТҰҢҒЫШ РЕТ жабайы жылқы қолға үйретілген. Археологиялық қазбаларда 300 000-нан астам жылқы сүйектері мен бие сүтінің (қымыздың) қалдықтары бар қыш ыдыстар табылған!'
+    answer: '🐎 Ботай мәдениеті (б.з.д. IV–III мыңжылдықтар) — Солтүстік Қазақстан аумағындағы энеолит дәуірінің әлемге әйгілі мәдениеті. Дәл осы жерде адамзат тарихында ТҰҢҒЫШ РЕТ жабайы жылқы қолға үйретілген. Археологиялық қазбаларда 300 000-нан астам жылқы сүйектері мен бие сүтінің (қымыздың) қалдықтары бар қыш ыдыстар табылған!\n\n🇬🇧 Key English Vocabulary:\n• Horse Domestication [хорс доместикейшн] = Жылқыны қолға үйрету\n• Archaeological excavation = Археологиялық қазба\n• Eneolithic Era = Энеолит (мысты-тас) дәуірі'
   },
   {
     keywords: ['томирис', 'кир', 'сақ', 'кирош', 'tomyris', 'cyrus'],
-    answer: 'Томирис — массагет (сақ) тайпаларының әйгілі жауынгер патшайымы. Б.з.д. 530 жылы ол Ұлы Даланы жаулап алуға келген Парсы патшасы Кирдің қалың әскерін талқандап, ел тәуелсіздігін сақтап қалды.'
+    answer: '👑 Томирис — массагет (сақ) тайпаларының әйгілі жауынгер патшайымы. Б.з.д. 530 жылы ол Ұлы Даланы жаулап алуға келген Парсы патшасы Кирдің қалың әскерін талқандап, ел тәуелсіздігін сақтап қалды.\n\n🇬🇧 Key English Vocabulary:\n• Steppe Queen = Дала патшайымы\n• Defeat the invader = Басқыншыны жеңу\n• Sacred Freedom = Қасиетті еркіндік'
   },
   {
     keywords: ['алтын адам', 'есік', 'қорған', 'golden man', 'issyk'],
-    answer: '«Алтын адам» — 1969 жылы Алматы маңындағы Есік обасынан археолог Кемал Ақышев тапқан жас сақ жауынгері. Ол 4000-нан астам таза алтын бұйымдармен және 48 см биік тәжімен көмкерілген.'
+    answer: '🏆 «Алтын адам» — 1969 жылы Алматы маңындағы Есік обасынан археолог Кемал Ақышев тапқан жас сақ жауынгері. Ол 4000-нан астам таза алтын бұйымдармен және 48 см биік тәжімен көмкерілген.\n\n🇬🇧 Key English Vocabulary:\n• Golden Warrior = Алтын жауынгер\n• Burial Mound / Kurgan = Оба / Қорған\n• Steppe Animal Style = Сақтардың аң стилі'
   },
   {
     keywords: ['қаратау', 'шапқыш', 'бифас', 'кремний', 'тас құрал', 'karatau'],
-    answer: 'Қаратау жотасындағы (Шабақты, Тәңірқазған, Бөріқазған) үңгірлерден 5000-нан астам тас құрал табылған. Ерте палеолит адамы кремний мен кварцитті қашап, әмбебап қол шапқыштарын (бифастар) жасаған.'
+    answer: '🪨 Қаратау жотасындағы (Шабақты, Тәңірқазған, Бөріқазған) үңгірлерден 5000-нан астам тас құрал табылған. Ерте палеолит адамы кремний мен кварцитті қашап, әмбебап қол шапқыштарын (бифастар) жасаған.\n\n🇬🇧 Key English Vocabulary:\n• Paleolithic Era = Ерте тас дәуірі (палеолит)\n• Flint Handaxe = Кремний қол шапқышы\n• Hunter-gatherers = Аңшы-терушілер'
   },
   {
     keywords: ['хандық', 'керей', 'жәнібек', '1465', 'khanate'],
-    answer: 'Қазақ хандығы — 1465 жылы Жетісу өңірінде (Қозыбасыда) Керей мен Жәнібек хандардың бастауымен құрылған тұңғыш дербес мемлекетіміз.'
+    answer: '⚔️ Қазақ хандығы — 1465 жылы Жетісу өңірінде (Қозыбасыда) Керей мен Жәнібек хандардың бастауымен құрылған тұңғыш дербес мемлекетіміз.\n\n🇬🇧 Key English Vocabulary:\n• Kazakh Khanate = Қазақ хандығы\n• Nomadic Statehood = Көшпелі мемлекеттілік\n• Sovereign Territory = Егемен аумақ'
   }
 ];
 
@@ -115,12 +115,17 @@ export default function AITarihshyModal({ isOpen, onClose, onAskQuestion, initia
               <span className="material-symbols-outlined text-2xl">psychology</span>
             </div>
             <div>
-              <h3 className="font-headline text-lg font-extrabold text-on-surface leading-tight">
-                {t('ai.title')}
-              </h3>
+              <div className="flex items-center gap-1.5">
+                <h3 className="font-headline text-lg font-extrabold text-on-surface leading-tight">
+                  {t('ai.title')}
+                </h3>
+                <span className="px-2 py-0.2 rounded-full bg-secondary-fixed/50 text-on-secondary-fixed font-headline text-[9px] font-black uppercase">
+                  🇬🇧 CLIL Mode
+                </span>
+              </div>
               <span className="font-label-sm text-xs text-primary font-bold flex items-center gap-1">
                 <span className="w-2 h-2 rounded-full bg-primary-container animate-pulse"></span>
-                {t('ai.active_status')}
+                {t('ai.active_status')} • Қазақша тарих & English Vocabulary
               </span>
             </div>
           </div>

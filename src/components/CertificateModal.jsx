@@ -76,28 +76,31 @@ export default function CertificateModal({ isOpen, onClose }) {
 
             {/* Title */}
             <div className="my-6">
+              <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-secondary-fixed text-on-secondary-fixed font-headline text-[10px] font-black uppercase tracking-wider mb-2">
+                <span>🇰🇿 Қазақстан Тарихы • 🇬🇧 Academic English (CLIL)</span>
+              </div>
               <h1 className="font-headline text-3xl sm:text-4xl font-extrabold uppercase tracking-wider text-primary">
                 СЕРТИФИКАТ
               </h1>
               <p className="font-body text-xs text-on-surface-variant uppercase tracking-widest mt-1">
-                CERTIFICATE OF HISTORICAL EXCELLENCE
+                CERTIFICATE OF EXCELLENCE: KAZAKHSTAN HISTORY & ACADEMIC ENGLISH
               </p>
             </div>
 
             {/* Recipient */}
             <div className="my-4">
-              <p className="font-body text-xs text-outline">Бұл сертификат марапатталады:</p>
+              <p className="font-body text-xs text-outline">Бұл ресми сертификат беріледі / This official certificate is awarded to:</p>
               <h2 className="font-headline text-2xl sm:text-3xl font-black text-on-surface mt-1 border-b-2 border-primary/30 inline-block px-8 pb-1">
                 {lang === 'en' && user.nameEn ? user.nameEn : (user.name || user.fullName || 'Студент')}
               </h2>
               <p className="font-body-sm text-xs text-on-surface-variant mt-2 font-bold">
-                Студенттік ID: {user.studentId || '—'} • {user.faculty || 'Инженерия және Жаратылыстану факультеті'}
+                Студенттік ID: {user.studentId || '—'} • {user.faculty || 'SDU University'}
               </p>
             </div>
 
             {/* Achievement text */}
             <p className="font-body text-xs sm:text-sm text-on-surface-variant max-w-xl mx-auto my-4 leading-relaxed">
-              Қазақстан тарихы курсының <strong>«Ежелгі Қазақстан: Тас дәуірі және Сақтар өркениеті»</strong> бөлімінің барлық видеодәрістері мен интерактивті сынақтарын <strong>100% үздік нәтижемен</strong> аяқтағанын растайды.
+              Қазақстан тарихы курсының <strong>«Ежелгі Қазақстан: Тас дәуірі және Сақтар өркениеті»</strong> бөлімінің барлық интерактивті дәрістерін және <strong>халықаралық ағылшын тіліндегі тарихи терминологиясын (CLIL)</strong> толық үздік нәтижемен меңгергенін растайды.
             </p>
 
             {/* Signatures & QR stamp */}

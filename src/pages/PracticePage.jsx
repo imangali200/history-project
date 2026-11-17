@@ -638,18 +638,30 @@ export default function PracticePage() {
                       <span className="px-3 py-1 rounded-full bg-primary/10 text-primary font-headline text-[11px] font-black uppercase tracking-wider">
                         {currentCard.tag}
                       </span>
-                      <div className="flex items-center gap-1 text-on-surface-variant">
+                      <div className="flex items-center gap-1.5 text-on-surface-variant">
                         <span className="text-xs font-bold text-outline">#{safeCardIdx + 1}</span>
+                        <button
+                          type="button"
+                          onClick={(e) => {
+                            e.stopPropagation();
+                            sounds.speakText(currentCard.frontEn || currentCard.front, 'en-US');
+                          }}
+                          className="px-2 py-0.5 rounded-full bg-secondary-fixed text-on-secondary-fixed text-[11px] font-headline font-black flex items-center gap-1 cursor-pointer hover:bg-secondary-container transition-all shadow-xs"
+                          title="Listen in English"
+                        >
+                          <span className="material-symbols-outlined text-[14px]">volume_up</span>
+                          <span>🇬🇧 EN</span>
+                        </button>
                         <button
                           type="button"
                           onClick={(e) => {
                             e.stopPropagation();
                             handleSpeak(currentCard.audioText || currentCard.front);
                           }}
-                          className="w-8 h-8 rounded-full hover:bg-surface-container flex items-center justify-center text-primary cursor-pointer transition-colors"
-                          title="Дыбыстап оқу"
+                          className="w-7 h-7 rounded-full bg-surface-container hover:bg-surface-container-high flex items-center justify-center text-primary cursor-pointer transition-colors"
+                          title="Қазақша тыңдау"
                         >
-                          <span className="material-symbols-outlined text-lg">volume_up</span>
+                          <span className="material-symbols-outlined text-sm">volume_up</span>
                         </button>
                       </div>
                     </div>
@@ -666,8 +678,12 @@ export default function PracticePage() {
                         </div>
                       )}
                       <h3 className="font-headline text-xl sm:text-2xl font-black text-on-surface">
-                        {lang === 'en' ? currentCard.frontEn : currentCard.front}
+                        {currentCard.front}
                       </h3>
+                      <div className="font-headline text-sm sm:text-base font-extrabold text-primary mt-0.5 flex items-center justify-center gap-1.5">
+                        <span className="text-[10px] px-1.5 py-0.2 rounded bg-primary/10 font-black">🇬🇧 EN</span>
+                        <span>{currentCard.frontEn}</span>
+                      </div>
                       <p className="font-body text-xs sm:text-sm text-on-surface-variant font-medium mt-1">
                         {lang === 'en' ? currentCard.subEn : currentCard.sub}
                       </p>

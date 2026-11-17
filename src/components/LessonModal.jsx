@@ -691,14 +691,14 @@ export default function LessonModal({
           <div className="w-full max-w-4xl mx-auto px-4 sm:px-6 flex-1 flex flex-col gap-6 py-4 animate-fadeIn">
             <div className="flex items-center justify-between">
               <div>
-                <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-primary-container/15 text-primary font-label-sm text-xs font-black uppercase mb-1">
-                  <span>2-КЕЗЕҢ • СӨЗДІК КАРТОЧКАЛАРЫ</span>
+                <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-secondary-fixed text-on-secondary-fixed font-headline text-xs font-black uppercase tracking-wider mb-1">
+                  <span>2-КЕЗЕҢ • 🇬🇧 ENGLISH VOCABULARY & 🇰🇿 ТАРИХ (CLIL)</span>
                 </div>
                 <h1 className="font-headline text-2xl font-black text-on-surface">
-                  {lang === 'en' ? 'Vocabulary Preview' : 'Сабақтағы Негізгі Ұғымдар'}
+                  {lang === 'en' ? 'Historical English Vocabulary' : 'Тарих арқылы Ағылшын сөздігі'}
                 </h1>
                 <p className="font-body-sm text-xs text-outline">
-                  {lang === 'en' ? 'Tap each card to pronounce and inspect meaning' : 'Әр карточканы басып, дауысын тыңдап, мағынасын оқып ал'}
+                  {lang === 'en' ? 'Tap Listen to hear native English pronunciation and learn historical terms' : 'Ағылшынша дыбысталуын тыңдап, тарихи сөздердің халықаралық атауын жаттап ал'}
                 </p>
               </div>
 
@@ -745,24 +745,27 @@ export default function LessonModal({
 
                       <div>
                         <div className="flex items-center justify-between">
-                          <span className="font-label-sm text-[11px] text-tertiary font-bold">
+                          <span className="font-label-sm text-[11px] text-tertiary font-bold flex items-center gap-1">
+                            <span className="px-1.5 py-0.2 rounded bg-tertiary-fixed text-on-tertiary-fixed text-[9px] font-black uppercase">🇬🇧 EN</span>
                             {vocab.partOfSpeech?.[lang]} • {vocab.pronunciation}
                           </span>
                           <button
                             type="button"
+                            title="Listen English Pronunciation"
                             onClick={(e) => {
                               e.stopPropagation();
-                              handleSpeakText(fullVocabText);
+                              sounds.speak(vocab.term?.en || fullVocabText, 'en-US');
                             }}
-                            className="w-7 h-7 rounded-full bg-surface-container text-tertiary hover:bg-tertiary hover:text-white flex items-center justify-center transition-all cursor-pointer"
+                            className="px-2 py-0.5 rounded-full bg-secondary-fixed/60 text-on-secondary-fixed hover:bg-secondary-container text-[11px] font-headline font-black flex items-center gap-1 transition-all cursor-pointer shadow-xs"
                           >
-                            <span className="material-symbols-outlined text-[16px]">volume_up</span>
+                            <span className="material-symbols-outlined text-[14px]">volume_up</span>
+                            <span>Listen</span>
                           </button>
                         </div>
-                        <h3 className="font-headline-md text-base text-on-surface font-extrabold mt-0.5">
-                          {vocab.term?.[lang]}{' '}
-                          <span className="text-on-surface-variant font-normal text-xs">
-                            ({vocab.term?.[lang === 'kk' ? 'en' : 'kk']})
+                        <h3 className="font-headline-md text-base text-on-surface font-black mt-1">
+                          {vocab.term?.en || vocab.term?.[lang]}{' '}
+                          <span className="text-primary font-bold text-xs block sm:inline">
+                            • {vocab.term?.kk}
                           </span>
                         </h3>
                         <p className="font-body-sm text-xs text-on-surface-variant mt-1 line-clamp-2">
@@ -1195,6 +1198,24 @@ export default function LessonModal({
                   1 {lang === 'en' ? 'DAY! 🔥' : 'КҮН! 🔥'}
                 </div>
               </div>
+            </div>
+
+            {/* Bilingual CLIL Vocabulary Mastery Badge */}
+            <div className="w-full max-w-3xl bg-gradient-to-r from-secondary-fixed/30 to-primary-container/10 rounded-2xl p-3 px-4 flex items-center justify-between border border-secondary-fixed/60 mt-1 shadow-xs">
+              <div className="flex items-center gap-2.5">
+                <span className="text-2xl">🇬🇧</span>
+                <div className="flex flex-col text-left">
+                  <span className="font-headline text-xs font-black text-on-surface">
+                    {lang === 'en' ? 'CLIL Achievement: Historical English Vocabulary Mastered' : 'CLIL Жетістігі: Ағылшынша тарихи сөздік меңгерілді'}
+                  </span>
+                  <span className="font-body text-[11px] text-primary font-bold">
+                    {lang === 'en' ? 'Native pronunciation & definitions verified' : 'Дұрыс дыбысталуы мен халықаралық анықтамалары бекітілді'}
+                  </span>
+                </div>
+              </div>
+              <span className="px-3 py-1 rounded-full bg-primary-container text-white font-headline text-[10px] font-black uppercase shadow-xs">
+                ✓ +5 New Words
+              </span>
             </div>
 
             {/* Achievement Badge */}
