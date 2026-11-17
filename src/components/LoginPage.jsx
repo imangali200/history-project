@@ -122,11 +122,13 @@ export default function LoginPage({ onLogin }) {
             {/* Mascot Image */}
             <div className="relative flex items-center justify-center my-2">
               <div className="absolute -inset-4 bg-secondary-fixed/40 rounded-full blur-2xl"></div>
-              <img
-                alt="Барыс Маскоты"
-                className="relative w-44 h-44 sm:w-52 sm:h-52 object-contain filter drop-shadow-lg transition-transform hover:scale-105 duration-300"
-                src="https://lh3.googleusercontent.com/aida-public/AB6AXuCRV2v68VtTYs3MdaTasAutUrXhUjI1XQ775hwq88ApP0tkKLncoF9ZjXQzC-qav-aF2eDXSDEYnAbim0TgJVJy1G-K1HGtwaPfq7WfRoC2zLtE6EDP6PJoD8YUPmKtFHO5QwMk3Hi1-Ogx5D7pxuWJXBbGy4gRgyFqoHz1q4LaT8pgiTuGXaM2f4du3urgozeMKxA7QuapUNKRfg3egzOAsYHPRuJmrDDS3HPuZlrF"
-              />
+              <div className="relative rounded-3xl border-4 border-primary-container/50 bg-white/80 p-3 shadow-[0_6px_0_0_#46a302] ring-4 ring-primary/10 backdrop-blur-sm transition-transform hover:scale-105 duration-300">
+                <img
+                  alt="Барыс Маскоты"
+                  className="w-40 h-40 sm:w-48 sm:h-48 object-contain filter drop-shadow-lg"
+                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuCRV2v68VtTYs3MdaTasAutUrXhUjI1XQ775hwq88ApP0tkKLncoF9ZjXQzC-qav-aF2eDXSDEYnAbim0TgJVJy1G-K1HGtwaPfq7WfRoC2zLtE6EDP6PJoD8YUPmKtFHO5QwMk3Hi1-Ogx5D7pxuWJXBbGy4gRgyFqoHz1q4LaT8pgiTuGXaM2f4du3urgozeMKxA7QuapUNKRfg3egzOAsYHPRuJmrDDS3HPuZlrF"
+                />
+              </div>
             </div>
 
             {/* Quick Demo Access Box */}

@@ -49,15 +49,17 @@ export default function Dashboard({
               {/* Mascot (Compact on mobile, full on desktop) */}
               <div className="relative shrink-0 flex items-center justify-center">
                 <div className="absolute -inset-2 bg-secondary-fixed/50 rounded-full blur-xl"></div>
-                <img
-                  alt="Барыс"
-                  className="relative w-24 h-24 sm:w-36 sm:h-36 lg:w-44 lg:h-44 object-contain filter drop-shadow-md transition-transform hover:scale-105 duration-200"
-                  src={
-                    isNew
-                      ? "https://lh3.googleusercontent.com/aida-public/AB6AXuCRV2v68VtTYs3MdaTasAutUrXhUjI1XQ775hwq88ApP0tkKLncoF9ZjXQzC-qav-aF2eDXSDEYnAbim0TgJVJy1G-K1HGtwaPfq7WfRoC2zLtE6EDP6PJoD8YUPmKtFHO5QwMk3Hi1-Ogx5D7pxuWJXBbGy4gRgyFqoHz1q4LaT8pgiTuGXaM2f4du3urgozeMKxA7QuapUNKRfg3egzOAsYHPRuJmrDDS3HPuZlrF"
-                      : "https://lh3.googleusercontent.com/aida-public/AB6AXuAJW3qFXcjsmoqZzB9NHwplQDC_OcoKmHsraysGaZF5dlIJxRrQR6_7gp3VhGYn-KOpR-ARDqjOe0hKFVYakwS2CTSb_ytVlBMW1jQZlumLsWV8k2rnzUFdPc_3KqeF-iVaQjldnW2mOZwku1X7jD-jvn6DfMnYvwzr1BnMnrVBF4O5LQEoO1ttam0YalRMBbJkvMJHGSf20XQXIeZQV-1MCbQxDDQs7KOvkcBchQAm"
-                  }
-                />
+                <div className="relative rounded-3xl border-4 border-primary-container/50 bg-white/80 p-2 sm:p-3 shadow-[0_5px_0_0_#46a302] ring-4 ring-primary/10 backdrop-blur-sm transition-transform hover:scale-105 duration-200">
+                  <img
+                    alt="Барыс"
+                    className="w-20 h-20 sm:w-32 sm:h-32 lg:w-40 lg:h-40 object-contain filter drop-shadow-md"
+                    src={
+                      isNew
+                        ? "https://lh3.googleusercontent.com/aida-public/AB6AXuCRV2v68VtTYs3MdaTasAutUrXhUjI1XQ775hwq88ApP0tkKLncoF9ZjXQzC-qav-aF2eDXSDEYnAbim0TgJVJy1G-K1HGtwaPfq7WfRoC2zLtE6EDP6PJoD8YUPmKtFHO5QwMk3Hi1-Ogx5D7pxuWJXBbGy4gRgyFqoHz1q4LaT8pgiTuGXaM2f4du3urgozeMKxA7QuapUNKRfg3egzOAsYHPRuJmrDDS3HPuZlrF"
+                        : "https://lh3.googleusercontent.com/aida-public/AB6AXuAJW3qFXcjsmoqZzB9NHwplQDC_OcoKmHsraysGaZF5dlIJxRrQR6_7gp3VhGYn-KOpR-ARDqjOe0hKFVYakwS2CTSb_ytVlBMW1jQZlumLsWV8k2rnzUFdPc_3KqeF-iVaQjldnW2mOZwku1X7jD-jvn6DfMnYvwzr1BnMnrVBF4O5LQEoO1ttam0YalRMBbJkvMJHGSf20XQXIeZQV-1MCbQxDDQs7KOvkcBchQAm"
+                    }
+                  />
+                </div>
                 <span className="absolute bottom-0 right-1 sm:right-2 px-2 py-0.5 rounded-full bg-secondary-container text-on-secondary-container font-headline text-[10px] sm:text-xs uppercase font-extrabold shadow-sm">
                   Барыс 🐾
                 </span>

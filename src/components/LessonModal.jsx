@@ -1101,7 +1101,7 @@ export default function LessonModal({
             <div className="relative flex items-center justify-center pt-2">
               <div className="absolute w-44 h-44 sm:w-56 sm:h-56 bg-gradient-to-tr from-secondary-fixed/40 via-primary-fixed/30 to-tertiary-fixed/40 rounded-full blur-2xl animate-pulse"></div>
 
-              <div className="relative w-40 h-40 sm:w-48 sm:h-48 rounded-full p-2 flex items-center justify-center">
+              <div className="relative w-40 h-40 sm:w-48 sm:h-48 rounded-3xl border-4 border-primary-container/50 bg-white/80 p-3 shadow-[0_6px_0_0_#46a302] ring-4 ring-primary/10 flex items-center justify-center">
                 <img
                   src={lesson.mascot?.celebrateAvatar}
                   alt="Barys Mascot Celebration"
