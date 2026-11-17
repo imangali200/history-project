@@ -29,11 +29,10 @@ export class CertificatesService {
   verifyCertificate(code: string) {
     const cert = this.issuedCertificates.find((c) => c.certificateNumber === code);
     if (!cert) {
-      // Mock valid response for testing
       return {
         certificateNumber: code,
         status: 'VALID',
-        studentName: 'Батыр Сұлтанов',
+        studentName: 'SDU Студент',
         institution: 'Сүлеймен Демирел Университеті (SDU)',
         course: 'Қазақстан Тарихы Курсы',
         isAuthentic: true,

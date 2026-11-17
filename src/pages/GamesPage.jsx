@@ -32,17 +32,16 @@ import GameArchaeologist from '../components/history_world/games/GameArchaeologi
 import GameKingdomBuilder from '../components/history_world/games/GameKingdomBuilder';
 import GameEscapeRoom from '../components/history_world/games/GameEscapeRoom';
 
-const STORAGE_KEY = 'history_world_save_v1';
-
 export default function GamesPage() {
   const { i18n } = useTranslation();
-  const { addXp } = useAuth();
+  const { user, addXp } = useAuth();
   const lang = i18n.language === 'en' ? 'en' : 'kk';
+  const storageKey = user?.studentId ? `history_world_save_${user.studentId}` : 'history_world_save_guest';
 
   // Game Persistence State
   const [gameState, setGameState] = useState(() => {
     try {
-      const saved = localStorage.getItem(STORAGE_KEY);
+      const saved = localStorage.getItem(user?.studentId ? `history_world_save_${user.studentId}` : 'history_world_save_guest');
       if (saved) {
         const parsed = JSON.parse(saved);
         return { ...INITIAL_GAME_STATE, ...parsed };
@@ -77,11 +76,11 @@ export default function GamesPage() {
   // Save to localStorage on changes
   useEffect(() => {
     try {
-      localStorage.setItem(STORAGE_KEY, JSON.stringify(gameState));
+      localStorage.setItem(storageKey, JSON.stringify(gameState));
     } catch {
       // ignore
     }
-  }, [gameState]);
+  }, [gameState, storageKey]);
 
   // Sync with NestJS backend on mount
   useEffect(() => {

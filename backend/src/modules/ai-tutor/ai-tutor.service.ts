@@ -1,5 +1,6 @@
 import { Injectable, Logger } from '@nestjs/common';
 import { ConfigService } from '@nestjs/config';
+import { PrismaService } from '../../database/prisma/prisma.service';
 import { MockDbService, MockUser } from '../../database/mock-db.service';
 import { ChatMessageDto } from './dto/chat.dto';
 
@@ -9,13 +10,23 @@ export class AiTutorService {
 
   constructor(
     private configService: ConfigService,
+    private prisma: PrismaService,
     private mockDb: MockDbService,
   ) {}
 
-  async askAiTarihshy(dto: ChatMessageDto, user: MockUser) {
+  async askAiTarihshy(dto: ChatMessageDto, user: any) {
     const question = dto.message.toLowerCase().trim();
 
-    // Reward 5 XP for asking AI Tarihshy
+    // Reward 5 XP for asking AI Tarihshy in Prisma & Mock
+    try {
+      if (user?.id) {
+        await this.prisma.user.update({
+          where: { id: user.id },
+          data: { xp: { increment: 5 } },
+        });
+      }
+    } catch {}
+
     const dbUser = this.mockDb.users.find((u) => u.id === user.id);
     if (dbUser) {
       dbUser.xp += 5;

@@ -382,7 +382,7 @@ export default function ProfilePage() {
           icon="apartment"
           iconBg="bg-surface-container-low text-on-surface-variant"
           label={lang === 'en' ? 'Faculty' : 'Факультет'}
-          value={lang === 'en' ? 'FEAS' : 'FEAS'}
+          value={user.faculty || (lang === 'en' ? 'FEAS' : 'Инженерия (FEAS)')}
           onClick={() => {}}
           chevron={false}
         />

@@ -1,6 +1,7 @@
-import React, { useState, useMemo } from 'react';
+import React, { useState, useMemo, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useAuth } from '../context/AuthContext';
+import { fetchWeeklyLeaderboard } from '../services/leaderboardService';
 
 export default function LeaderboardPage() {
   const { i18n } = useTranslation();
@@ -10,12 +11,23 @@ export default function LeaderboardPage() {
   // League filter: 'weekly' (Апталық) | 'allTime' (Жалпы)
   const [filter, setFilter] = useState('weekly');
   const [selectedFaculty, setSelectedFaculty] = useState('all');
+  const [backendStudents, setBackendStudents] = useState(null);
 
   const userXp = user?.xp || 0;
   const userStreak = user?.streak || 0;
   const userName = lang === 'en' && user?.nameEn ? user.nameEn : (user?.name || user?.fullName || '—');
   const userStudentId = user?.studentId || '—';
-  const userFaculty = 'SITAM';
+  const userFaculty = user?.faculty || 'FEAS';
+
+  useEffect(() => {
+    let isMounted = true;
+    fetchWeeklyLeaderboard(selectedFaculty).then((data) => {
+      if (isMounted && Array.isArray(data) && data.length > 0) {
+        setBackendStudents(data);
+      }
+    }).catch(() => {});
+    return () => { isMounted = false; };
+  }, [selectedFaculty]);
 
   // Base leaderboard students with authentic SDU profiles
   const BASE_STUDENTS = [
@@ -119,31 +131,57 @@ export default function LeaderboardPage() {
 
   // Merge current user dynamically and rank them
   const rankedList = useMemo(() => {
-    const list = [
-      ...BASE_STUDENTS.map((s) => ({
-        ...s,
-        xp: filter === 'weekly' ? s.xpWeekly : s.xpAllTime,
-        displayName: lang === 'en' ? s.nameEn : s.name
-      })),
-      {
-        id: userStudentId,
-        name: userName,
-        nameEn: userName,
-        displayName: `${userName} (${lang === 'en' ? 'You' : 'Сіз'})`,
-        faculty: userFaculty,
-        xp: filter === 'weekly' ? userXp : userXp * 3 + 120,
-        streak: userStreak,
-        avatar: '🐾',
-        avatarBg: 'from-primary-container to-primary',
-        badge: 'SDU Батыры',
-        isCurrentUser: true
-      }
-    ];
+    const rawList = backendStudents && backendStudents.length > 0
+      ? backendStudents.map((s) => ({
+          id: s.studentId || s.id,
+          name: s.name,
+          nameEn: s.nameEn || s.name,
+          faculty: s.faculty,
+          xp: filter === 'weekly' ? s.xp : s.xp * 3 + 120,
+          streak: s.streak || 1,
+          avatar: s.avatar || '🦁',
+          avatarBg: 'from-amber-400 to-amber-600',
+          badge: s.league || 'Сақ батыры',
+          displayName: lang === 'en' ? (s.nameEn || s.name) : s.name,
+        }))
+      : BASE_STUDENTS.map((s) => ({
+          ...s,
+          xp: filter === 'weekly' ? s.xpWeekly : s.xpAllTime,
+          displayName: lang === 'en' ? s.nameEn : s.name
+        }));
+
+    // Check if current user is already in the list
+    const hasCurrentUser = rawList.some((s) => s.id === userStudentId);
+
+    const list = hasCurrentUser
+      ? rawList.map((s) => s.id === userStudentId ? {
+          ...s,
+          xp: filter === 'weekly' ? userXp : userXp * 3 + 120,
+          streak: userStreak,
+          displayName: `${userName} (${lang === 'en' ? 'You' : 'Сіз'})`,
+          isCurrentUser: true,
+        } : s)
+      : [
+          ...rawList,
+          {
+            id: userStudentId,
+            name: userName,
+            nameEn: userName,
+            displayName: `${userName} (${lang === 'en' ? 'You' : 'Сіз'})`,
+            faculty: userFaculty,
+            xp: filter === 'weekly' ? userXp : userXp * 3 + 120,
+            streak: userStreak,
+            avatar: '🐾',
+            avatarBg: 'from-primary-container to-primary',
+            badge: 'SDU Батыры',
+            isCurrentUser: true
+          }
+        ];
 
     // Filter by faculty if selected
     const filtered = selectedFaculty === 'all'
       ? list
-      : list.filter((s) => s.faculty.toLowerCase().includes(selectedFaculty.toLowerCase()) || s.isCurrentUser);
+      : list.filter((s) => (s.faculty || '').toLowerCase().includes(selectedFaculty.toLowerCase()) || s.isCurrentUser);
 
     // Sort by XP descending
     filtered.sort((a, b) => b.xp - a.xp);
@@ -152,7 +190,7 @@ export default function LeaderboardPage() {
       ...item,
       rank: index + 1
     }));
-  }, [filter, selectedFaculty, userXp, userStreak, userName, userFaculty, userStudentId, lang]);
+  }, [backendStudents, filter, selectedFaculty, userXp, userStreak, userName, userFaculty, userStudentId, lang]);
 
   // Top 3 for podium
   const first = rankedList[0];
