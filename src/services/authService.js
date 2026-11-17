@@ -5,47 +5,11 @@
 
 import { api, setAuthToken } from './api';
 
-// SDU Local Database fallback for offline resilience
-const SDU_STUDENT_DATABASE = [
-  {
-    studentId: '220107045',
-    password: 'password123',
-    name: 'Батыр Сұлтанов',
-    nameEn: 'Batyr Sultanov',
-    faculty: 'Инженерия және жаратылыстану ғылымдары факультеті (FEAS)',
-    facultyEn: 'Faculty of Engineering & Natural Sciences (FEAS)',
-    specialty: 'Ақпараттық жүйелер (Information Systems)',
-    course: 3,
-    xp: 450,
-    streak: 4,
-    hearts: 5,
-    level: 5,
-    isNewUser: false,
-    timeCrystalFragments: [1, 2, 3, 5],
-  },
-  {
-    studentId: '240103012',
-    password: 'password123',
-    name: 'Аружан Қайратқызы',
-    nameEn: 'Aruzhan Kairatkyzy',
-    faculty: 'Білім және гуманитарлық ғылымдар факультеті (FEH)',
-    facultyEn: 'Faculty of Education & Humanities (FEH)',
-    specialty: 'Қазақ тілі мен тарихы (Kazakh History & Lang)',
-    course: 1,
-    xp: 120,
-    streak: 2,
-    hearts: 5,
-    level: 2,
-    isNewUser: false,
-    timeCrystalFragments: [1],
-  },
-];
-
 export async function loginWithSDU(studentId, password) {
   const trimmedId = studentId.trim();
   const trimmedPass = password.trim();
 
-  // 1. Try real NestJS backend endpoint first
+  // Call the real NestJS backend endpoint
   try {
     const data = await api.post('/auth/sdu-login', {
       studentId: trimmedId,
@@ -64,35 +28,13 @@ export async function loginWithSDU(studentId, password) {
       };
     }
   } catch (backendError) {
-    console.warn('[SDU Auth] Backend request failed, checking local fallback:', backendError.message);
-  }
-
-  // 2. Offline Fallback
-  const student = SDU_STUDENT_DATABASE.find((s) => s.studentId === trimmedId);
-  if (student) {
-    return {
-      success: true,
-      user: { ...student },
-    };
-  }
-
-  if (/^\d{6,12}$/.test(trimmedId)) {
-    return {
-      success: true,
-      user: {
-        studentId: trimmedId,
-        name: `SDU Студент (${trimmedId})`,
-        nameEn: `SDU Student (${trimmedId})`,
-        faculty: 'SDU University',
-        course: 1,
-        xp: 50,
-        streak: 1,
-        hearts: 5,
-        level: 1,
-        isNewUser: false,
-        timeCrystalFragments: [],
-      },
-    };
+    // If it's a 401/403 from the backend, propagate the real error
+    if (backendError?.status === 401 || backendError?.status === 403) {
+      throw new Error('Student ID немесе құпия сөз қате. Қайталап көріңіз.');
+    }
+    // Network or server error — propagate it too
+    console.error('[SDU Auth] Backend error:', backendError.message);
+    throw new Error('Сервермен байланыс орнатылмады. Интернет қосылымын тексеріңіз.');
   }
 
   throw new Error('Student ID немесе құпия сөз қате. Қайталап көріңіз.');

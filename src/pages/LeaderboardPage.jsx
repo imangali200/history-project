@@ -11,10 +11,10 @@ export default function LeaderboardPage() {
   const [filter, setFilter] = useState('weekly');
   const [selectedFaculty, setSelectedFaculty] = useState('all');
 
-  const userXp = user?.xp || 40;
-  const userStreak = user?.streak || 1;
-  const userName = lang === 'en' && user?.nameEn ? user.nameEn : (user?.name || user?.fullName || 'Батыр Сұлтанов');
-  const userStudentId = user?.studentId || '220107045';
+  const userXp = user?.xp || 0;
+  const userStreak = user?.streak || 0;
+  const userName = lang === 'en' && user?.nameEn ? user.nameEn : (user?.name || user?.fullName || '—');
+  const userStudentId = user?.studentId || '—';
   const userFaculty = 'SITAM';
 
   // Base leaderboard students with authentic SDU profiles

@@ -13,16 +13,16 @@ export default function LearnMap({ user, onStartLesson }) {
   const [activePopover, setActivePopover] = useState(true);
 
   const safeUser = user || {
-    name: 'Батыр Сұлтанов',
-    studentId: '220107045',
-    xp: 40,
-    streak: 1,
-    hearts: 5,
-    isNewUser: false,
-    completedLessons: ['stone-age-1']
+    name: '',
+    studentId: '',
+    xp: 0,
+    streak: 0,
+    hearts: 0,
+    isNewUser: true,
+    completedLessons: []
   };
   const isNew = safeUser.isNewUser || (safeUser.xp || 0) === 0;
-  const completed = safeUser.completedLessons || (isNew ? [] : ['stone-age-1']);
+  const completed = safeUser.completedLessons || [];
   const isNode1Done = completed.includes('stone-age-1');
   const isNode2Done = completed.includes('saka-1');
   const isNode2Unlocked = isNode1Done;
@@ -609,7 +609,7 @@ export default function LearnMap({ user, onStartLesson }) {
                   </div>
                   <div className="flex flex-col">
                     <span className="font-headline text-xs text-on-surface font-extrabold">
-                      {safeUser.name || 'Батыр'} ({t('dashboard.you')})
+                      {safeUser.name || '—'} ({t('dashboard.you')})
                     </span>
                     <span className="font-headline text-[10px] text-primary font-bold">Жоғарылау аймағында</span>
                   </div>

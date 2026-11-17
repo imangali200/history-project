@@ -95,7 +95,7 @@ export default function ProfilePage() {
 
           {/* Email */}
           <p className="font-body text-xs text-outline mt-1">
-            {user.email || `${user.studentId || '220107045'}@sdu.edu.kz`}
+            {user.email || `${user.studentId || '—'}@sdu.edu.kz`}
           </p>
 
           {/* Role tags */}
@@ -370,7 +370,7 @@ export default function ProfilePage() {
           icon="badge"
           iconBg="bg-surface-container-low text-on-surface-variant"
           label={lang === 'en' ? 'Student ID' : 'Студент ID'}
-          value={user.studentId || '220107045'}
+          value={user.studentId || '—'}
           onClick={() => {}}
           chevron={false}
         />

@@ -29,7 +29,7 @@ export default function Navbar({ sidebarCollapsed = false }) {
         {/* Student ID Badge on Desktop */}
         <div className="hidden lg:flex items-center gap-1.5 px-3 py-1 rounded-full bg-surface-container-high/80 text-on-surface-variant text-xs font-headline font-bold border border-surface-container-highest/60">
           <span className="material-symbols-outlined text-sm text-primary">badge</span>
-          <span>ID: {user.studentId || '220107045'}</span>
+          <span>ID: {user.studentId || '—'}</span>
         </div>
       </div>
 

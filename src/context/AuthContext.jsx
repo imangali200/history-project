@@ -4,24 +4,6 @@ import sounds from '../utils/audio';
 const AuthContext = createContext(null);
 
 const STORAGE_KEY = 'sdu_history_user';
-const LOGGED_OUT_KEY = 'sdu_history_logged_out';
-
-const DEFAULT_STUDENT = {
-  studentId: '220107045',
-  password: 'password123',
-  name: 'Батыр Сұлтанов',
-  nameEn: 'Batyr Sultanov',
-  faculty: 'Инженерия және жаратылыстану ғылымдары факультеті (FEAS)',
-  facultyEn: 'Faculty of Engineering & Natural Sciences (FEAS)',
-  specialty: 'Ақпараттық жүйелер (Information Systems)',
-  course: 3,
-  xp: 40,
-  streak: 1,
-  hearts: 5,
-  level: 5,
-  isNewUser: false,
-  completedLessons: ['stone-age-1']
-};
 
 export function AuthProvider({ children }) {
   const [user, setUser] = useState(() => {
@@ -62,9 +44,6 @@ export function AuthProvider({ children }) {
   }, [user]);
 
   const login = (userData) => {
-    try {
-      localStorage.removeItem(LOGGED_OUT_KEY);
-    } catch {}
     const enriched = {
       ...userData,
       completedLessons: userData.isNewUser ? [] : (userData.completedLessons || ['stone-age-1']),
@@ -82,7 +61,6 @@ export function AuthProvider({ children }) {
 
   const logout = () => {
     try {
-      localStorage.setItem(LOGGED_OUT_KEY, 'true');
       localStorage.removeItem(STORAGE_KEY);
       localStorage.removeItem('qazhistory_token');
     } catch {}
@@ -187,11 +165,11 @@ export function AuthProvider({ children }) {
       setUser((prev) => ({
         ...prev,
         isNewUser: false,
-        xp: 40,
-        streak: 1,
-        level: 5,
+        xp: prev.xp || 10,
+        streak: prev.streak || 1,
+        level: Math.floor((prev.xp || 10) / 50) + 1,
         hearts: 5,
-        completedLessons: ['stone-age-1']
+        completedLessons: prev.completedLessons?.length ? prev.completedLessons : []
       }));
       setCompletedQuests(1);
       setDailyGoalProgress(50);

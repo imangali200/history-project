@@ -91,7 +91,7 @@ export default function CertificateModal({ isOpen, onClose }) {
                 {lang === 'en' && user.nameEn ? user.nameEn : (user.name || user.fullName || 'Студент')}
               </h2>
               <p className="font-body-sm text-xs text-on-surface-variant mt-2 font-bold">
-                Студенттік ID: {user.studentId || '220107045'} • {user.faculty || 'Инженерия және Жаратылыстану факультеті'}
+                Студенттік ID: {user.studentId || '—'} • {user.faculty || 'Инженерия және Жаратылыстану факультеті'}
               </p>
             </div>
 
